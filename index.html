@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio — Nama Anda</title>
+  <meta name="description" content="Portfolio modern — Nama Anda, Web Developer / Designer" />
+  <meta name="theme-color" content="#0f172a" />
+
+  <!-- Tailwind via CDN for rapid prototyping -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Tailwind config for dark mode class strategy
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#7c3aed'
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-white text-slate-800 antialiased dark:bg-slate-900 dark:text-slate-200">
+  <header class="fixed w-full z-40 backdrop-blur bg-white/60 dark:bg-slate-900/60 border-b border-slate-200 dark:border-slate-700">
+      <div class="max-w-5xl mx-auto px-6 py-3 flex items-center justify-between">
+      <a href="#home" class="font-semibold text-lg">Parulian Johannes<span class="text-primary">.</span></a>
+
+      <nav class="hidden md:flex items-center gap-4 flex-nowrap flex-1">
+        <div class="nav-links flex items-center gap-4 mx-auto">
+          <a id="nav-about" href="#about" class="hover:text-primary">About</a>
+          <a id="nav-projects" href="#projects" class="hover:text-primary">Projects</a>
+          <a id="nav-skills" href="#skills" class="hover:text-primary">Skills</a>
+          <a id="nav-contact" href="#contact" class="hover:text-primary">Contact</a>
+        </div>
+
+        <div class="header-actions flex items-center gap-3 ml-4">
+          <a href="mailto:parulianjohannes28@gmail.com" class="action-btn" aria-label="Email: parulianjohannes28@gmail.com" title="Email">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4zm2 0v.511l8 5.333 8-5.333V4H4zm16 2.689l-7.206 4.803a1 1 0 0 1-1.088 0L4 6.689V20h16V6.689z"/></svg>
+          </a>
+
+          <a href="https://www.linkedin.com/in/parulian-johannes-883aa3268" target="_blank" rel="noopener" class="action-btn" aria-label="LinkedIn" title="LinkedIn">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0zM8 8h4.7v2.2h.1c.7-1.3 2.4-2.2 3.9-2.2 4.2 0 5 2.8 5 6.5V24h-5V15.2c0-2.1 0-4.8-2.9-4.8-2.9 0-3.3 2.2-3.3 4.6V24H8V8z"/></svg>
+          </a>
+
+          <a href="https://github.com/parulian-johannes" target="_blank" rel="noopener" class="action-btn" aria-label="GitHub" title="GitHub">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.34-1.27-1.7-1.27-1.7-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.73-1.53-2.56-.29-5.26-1.28-5.26-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.45.11-3.02 0 0 .97-.31 3.18 1.18.92-.26 1.92-.39 2.91-.39.99 0 1.99.13 2.91.39 2.21-1.49 3.18-1.18 3.18-1.18.62 1.57.23 2.73.11 3.02.74.81 1.18 1.84 1.18 3.1 0 4.42-2.7 5.39-5.27 5.67.41.35.77 1.04.77 2.1 0 1.52-.01 2.75-.01 3.13 0 .31.21.68.8.56C20.71 21.39 24 17.08 24 12 24 5.65 18.35.5 12 .5z"/></svg>
+          </a>
+
+          <a href="resume.pdf" class="action-btn" download title="Download CV (PDF)" aria-label="Download CV">
+            <svg class="icon-sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v10.586l3.293-3.293 1.414 1.414L12 17.414 7.293 12.707l1.414-1.414L11 13.586V3h1zM5 20h14v2H5z"/></svg>
+          </a>
+
+          <button id="lang-toggle" class="action-btn" aria-label="Toggle language" title="Toggle language">
+            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true" focusable="false"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 2c1.3 0 2.5.3 3.6.8-.1.4-.3.8-.5 1.2-.7-.2-1.4-.3-2.1-.3-1 0-1.9.2-2.8.5-.5-.8-.8-1.6-.9-2.5A7.9 7.9 0 0 1 12 4zM6 9c.1.9.4 1.7.9 2.5C6.9 12 6 11.5 6 11V9zM12 20c-1.3 0-2.5-.3-3.6-.8.1-.4.3-.8.5-1.2.7.2 1.4.3 2.1.3 1 0 1.9-.2 2.8-.5.5.8.8 1.6.9 2.5A7.9 7.9 0 0 1 12 20z"/></svg>
+          </button>
+
+          <button id="theme-toggle" class="action-btn" aria-label="Toggle theme" title="Toggle theme">
+            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+        </div>
+      </nav>
+
+      <div class="md:hidden flex items-center gap-2">
+        <button id="theme-toggle-mobile" aria-label="Toggle color theme" class="px-2 py-1 rounded-md border">☾</button>
+        <button id="nav-toggle" aria-controls="mobile-nav" aria-expanded="false" class="p-2 rounded-md border" aria-label="Toggle navigation">☰</button>
+      </div>
+    </div>
+
+    <!-- Mobile nav -->
+    <div id="mobile-nav" class="md:hidden hidden border-t border-slate-200 dark:border-slate-700 bg-white/80 dark:bg-slate-900/80" aria-hidden="true">
+      <div class="px-6 py-4 flex flex-col gap-3">
+        <a href="#about" class="hover:text-primary">About</a>
+        <a href="#projects" class="hover:text-primary">Projects</a>
+        <a href="#skills" class="hover:text-primary">Skills</a>
+        <a href="#contact" class="hover:text-primary">Contact</a>
+        <a href="mailto:parulianjohannes28@gmail.com" class="hover:text-primary flex items-center gap-2"> 
+          <svg class="icon-sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4zm2 0v.511l8 5.333 8-5.333V4H4zm16 2.689l-7.206 4.803a1 1 0 0 1-1.088 0L4 6.689V20h16V6.689z"/></svg>
+          parulianjohannes28@gmail.com
+        </a>
+        <a href="https://www.linkedin.com/in/parulian-johannes-883aa3268" target="_blank" rel="noopener" class="hover:text-primary flex items-center gap-2"> 
+          <svg class="icon-sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0zM8 8h4.7v2.2h.1c.7-1.3 2.4-2.2 3.9-2.2 4.2 0 5 2.8 5 6.5V24h-5V15.2c0-2.1 0-4.8-2.9-4.8-2.9 0-3.3 2.2-3.3 4.6V24H8V8z"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://github.com/parulian-johannes" target="_blank" rel="noopener" class="hover:text-primary flex items-center gap-2"> 
+          <svg class="icon-sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.34-1.27-1.7-1.27-1.7-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.73-1.53-2.56-.29-5.26-1.28-5.26-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.45.11-3.02 0 0 .97-.31 3.18 1.18.92-.26 1.92-.39 2.91-.39.99 0 1.99.13 2.91.39 2.21-1.49 3.18-1.18 3.18-1.18.62 1.57.23 2.73.11 3.02.74.81 1.18 1.84 1.18 3.1 0 4.42-2.7 5.39-5.27 5.67.41.35.77 1.04.77 2.1 0 1.52-.01 2.75-.01 3.13 0 .31.21.68.8.56C20.71 21.39 24 17.08 24 12 24 5.65 18.35.5 12 .5z"/></svg>
+          GitHub
+        </a>
+        <a href="resume.pdf" class="btn-cv" download title="Download CV (PDF)" aria-label="Download CV">
+          <svg class="icon-sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v10.586l3.293-3.293 1.414 1.414L12 17.414 7.293 12.707l1.414-1.414L11 13.586V3h1zM5 20h14v2H5z"/></svg>
+          Download CV
+        </a>
+        <button id="lang-toggle-mobile" class="btn-cv" aria-label="Toggle language">ID</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-20">
+    <!-- Hero -->
+    <section id="home" class="min-h-[70vh] flex items-center">
+  <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-8 items-center hero-visuals">
+        <!-- decorative blobs -->
+        <div class="blob blob--purple" aria-hidden="true"></div>
+        <div class="blob blob--cyan" aria-hidden="true"></div>
+        <div>
+          <h1 class="text-4xl md:text-5xl font-extrabold leading-tight"><span id="hero-name" class="gradient-text">Hai, saya Parulian Johannes</span></h1>
+          <p id="hero-sub" class="mt-4 text-lg text-slate-600 dark:text-slate-300">Mahasiswa Teknik Komputer — Web Developer & Data Enthusiast. Berpengalaman membangun antarmuka responsif dengan HTML, Tailwind, dan JavaScript serta melakukan analisis data dan eksperimen numerik menggunakan Python dan Jupyter Notebook.</p>
+
+          <div class="mt-6 flex flex-wrap gap-3 items-center">
+            <a id="cta-projects-btn" href="#projects" class="px-5 py-2 rounded-md btn-gradient text-white shadow-sm cta-btn" role="button">Lihat Projek</a>
+            <a id="cta-contact-btn" href="#contact" class="px-5 py-2 rounded-md border">Hubungi Saya</a>
+            <a id="cta-download-btn" href="/resume.pdf" class="px-5 py-2 rounded-md border" target="_blank">Download CV</a>
+          </div>
+
+          <div class="mt-6 grid grid-cols-2 gap-2 text-sm text-slate-400">
+            <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-emerald-400"></span> Production-ready code</div>
+            <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-indigo-400"></span> Responsive & accessible</div>
+          </div>
+
+          <div class="mt-8 text-sm text-slate-500 dark:text-slate-400">Terbiasa bekerja dengan HTML, CSS, JavaScript, Tailwind; berpengalaman dengan analisis data di Python (NumPy, pandas) dan dokumentasi di Jupyter Notebook.</div>
+        </div>
+
+        <div class="flex items-center justify-center">
+          <!-- profile card -->
+          <div class="w-72 h-72 rounded-3xl overflow-hidden ring-1 ring-slate-100 dark:ring-slate-800 card-accent glass">
+            <img src="assets/profile.jpg" alt="Parulian Johannes" class="w-full h-full object-cover"/>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI Wave separator -->
+    <div class="ai-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 320" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="waveGrad" x1="0%" x2="100%">
+            <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.9"/>
+            <stop offset="50%" stop-color="#06b6d4" stop-opacity="0.8"/>
+            <stop offset="100%" stop-color="#4f46e5" stop-opacity="0.7"/>
+          </linearGradient>
+        </defs>
+        <path class="wave-path" d="M0,224L48,213.3C96,203,192,181,288,165.3C384,149,480,139,576,122.7C672,107,768,85,864,90.7C960,96,1056,128,1152,154.7C1248,181,1344,203,1392,213.3L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        <path class="wave-path alt" d="M0,192L48,181.3C96,171,192,149,288,144C384,139,480,149,576,165.3C672,181,768,203,864,218.7C960,235,1056,245,1152,240C1248,235,1344,213,1392,202.7L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+      </svg>
+    </div>
+
+    <!-- About -->
+    <section id="about" class="py-16">
+      <div class="max-w-5xl mx-auto px-6">
+        <h2 class="text-2xl font-bold">About</h2>
+  <div id="about-text" class="mt-4 text-slate-600 dark:text-slate-300">Highly motivated Computer Engineering student with strong experience in organizational leadership, project coordination, and web development. Actively involved in student organizations and volunteer projects, handling responsibilities such as fundraising management, creative economics programs, and mentoring new students. Experienced in developing web interfaces and supporting digital empowerment programs for local SMEs. Strong teamwork, communication, and problem-solving abilities, with a commitment to continuous learning and professional growth.</div>
+
+        <div class="mt-4 grid md:grid-cols-2 gap-6">
+          <div class="space-y-3">
+            <h3 class="font-semibold">Organisasi & Pengalaman Komite</h3>
+            <ul class="list-disc ml-5 text-slate-600 dark:text-slate-300">
+              <li><strong>Head of Fundraising Division</strong>, HIMASKOM — Universitas Diponegoro (Jan 2024 – Apr 2025)</li>
+              <li><strong>Head of Creative Economic Division</strong>, PMK FT — Universitas Diponegoro (Jan 2025 – Dec 2025)</li>
+              <li><strong>Staff Muda</strong>, PMK FT — Universitas Diponegoro (Jan 2024 – Dec 2024)</li>
+              <li><strong>Volunteer</strong>, AIESEC in Semarang (Jun 2023 – Jul 2023)</li>
+              <li><strong>Student Mentor</strong>, ODM UNDIP (Aug 2023)</li>
+              <li><strong>Event Staff, UI/UX The ACE</strong> — Teknik Komputer Undip (Jul 2024 – Sept 2024)</li>
+            </ul>
+          </div>
+
+          <div class="space-y-3">
+            <h3 class="font-semibold">Cara kerja & Kekuatan</h3>
+            <p class="text-slate-600 dark:text-slate-300">Iteratif, komunikatif, dan berfokus pada deliverable yang dapat diuji. Saya menekankan dokumentasi, kolaborasi lintas tim, dan solusi yang reproducible untuk analisis data dan pengembangan front-end.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="py-16 bg-slate-50 dark:bg-slate-800">
+      <div class="max-w-5xl mx-auto px-6">
+  <h2 id="projects-heading" class="text-2xl font-bold">Projects</h2>
+        <p class="mt-2 text-slate-600 dark:text-slate-300">Beberapa contoh project yang saya kerjakan. Klik untuk detail.</p>
+
+    <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Projects imported from GitHub profile -->
+          <div tabindex="0" role="button" class="p-4 rounded-xl bg-white dark:bg-slate-900 shadow hover:shadow-lg transition cursor-pointer project-card reveal" data-project='{"title":"TA_DKP_PARULIAN-JOHANNES_21120122140141_PROGRAM_DATA_KEPENDUDUKAN_SEMARANG","tags":["Python","Data"],"description":"Tugas akhir: analisis program data kependudukan Semarang (Python).","image":"assets/project-1.jpg","code":"https://github.com/parulian-johannes/TA_DKP_PARULIAN-JOHANNES_21120122140141_PROGRAM_DATA_KEPENDUDUKAN_SEMARANG"}' onclick="openProject(this)">
+            <div class="w-full h-36 object-cover rounded-md overflow-hidden"><img loading="lazy" src="assets/project-1.jpg" alt="Analisis data kependudukan" class="w-full h-full object-cover"/></div>
+            <h3 class="mt-3 font-semibold">TA_DKP — Data Kependudukan</h3>
+            <div class="mt-2 flex flex-wrap gap-2">
+              <span class="px-2 py-1 text-xs rounded-full border text-slate-600 dark:text-slate-300">Python</span>
+              <span class="px-2 py-1 text-xs rounded-full border text-slate-600 dark:text-slate-300">Data</span>
+            </div>
+            <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Tugas akhir / analisis data (Python).</p>
+          </div>
+
+          <div tabindex="0" role="button" class="p-4 rounded-xl bg-white dark:bg-slate-900 shadow hover:shadow-lg transition cursor-pointer project-card reveal" data-project='{"title":"Tugas-metnum","tags":["Jupyter Notebook","NumPy"],"description":"Kumpulan tugas metode numerik dan eksperimen (Jupyter).","image":"assets/project-2.jpg","code":"https://github.com/parulian-johannes/Tugas-metnum"}' onclick="openProject(this)">
+            <div class="w-full h-36 object-cover rounded-md overflow-hidden"><img loading="lazy" src="assets/project-2.jpg" alt="Metode numerik dan perhitungan" class="w-full h-full object-cover"/></div>
+            <h3 class="mt-3 font-semibold">Tugas Metnum</h3>
+            <div class="mt-2 flex flex-wrap gap-2">
+              <span class="px-2 py-1 text-xs rounded-full border text-slate-600 dark:text-slate-300">Jupyter</span>
+              <span class="px-2 py-1 text-xs rounded-full border text-slate-600 dark:text-slate-300">NumPy</span>
+            </div>
+            <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Notebook tugas metode numerik.</p>
+          </div>
+
+          <div tabindex="0" role="button" class="p-4 rounded-xl bg-white dark:bg-slate-900 shadow hover:shadow-lg transition cursor-pointer project-card reveal" data-project='{"title":"Tugas_Interpolasi","tags":["Jupyter Notebook","Interpolation"],"description":"Implementasi interpolasi numerik dalam Jupyter Notebook.","image":"assets/project-3.jpg","code":"https://github.com/parulian-johannes/Tugas_Interpolasi"}' onclick="openProject(this)">
+            <div class="w-full h-36 object-cover rounded-md overflow-hidden"><img loading="lazy" src="assets/project-3.jpg" alt="Grafik interpolasi" class="w-full h-full object-cover"/></div>
+            <h3 class="mt-3 font-semibold">Tugas Interpolasi</h3>
+            <div class="mt-2 flex flex-wrap gap-2">
+              <span class="px-2 py-1 text-xs rounded-full border text-slate-600 dark:text-slate-300">Jupyter</span>
+              <span class="px-2 py-1 text-xs rounded-full border text-slate-600 dark:text-slate-300">Interpolation</span>
+            </div>
+            <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Notebook tugas interpolasi.</p>
+          </div>
+
+          <div tabindex="0" role="button" class="p-4 rounded-xl bg-white dark:bg-slate-900 shadow hover:shadow-lg transition cursor-pointer project-card reveal" data-project='{"title":"Tugas-Aplikasi-Regresi","tags":["Jupyter Notebook","Regression"],"description":"Tugas aplikasi regresi dan analisis model.","image":"assets/project-4.jpg","code":"https://github.com/parulian-johannes/Tugas-Aplikasi-Regresi"}' onclick="openProject(this)">
+            <div class="w-full h-36 object-cover rounded-md overflow-hidden"><img loading="lazy" src="assets/project-4.jpg" alt="Plot regresi" class="w-full h-full object-cover"/></div>
+            <h3 class="mt-3 font-semibold">Tugas Aplikasi Regresi</h3>
+            <div class="mt-2 flex flex-wrap gap-2">
+              <span class="px-2 py-1 text-xs rounded-full border text-slate-600 dark:text-slate-300">Regression</span>
+              <span class="px-2 py-1 text-xs rounded-full border text-slate-600 dark:text-slate-300">Jupyter</span>
+            </div>
+            <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Analisis regresi dalam Jupyter.</p>
+          </div>
+
+          <div tabindex="0" role="button" class="p-4 rounded-xl bg-white dark:bg-slate-900 shadow hover:shadow-lg transition cursor-pointer project-card reveal" data-project='{"title":"Tugas-menghitung-nilai-pi","tags":["Jupyter Notebook","Math"],"description":"Eksperimen menghitung nilai π menggunakan metode numerik.","image":"assets/project-5.jpg","code":"https://github.com/parulian-johannes/Tugas-menghitung-nilai-pi"}' onclick="openProject(this)">
+            <div class="w-full h-36 object-cover rounded-md overflow-hidden"><img loading="lazy" src="assets/project-5.jpg" alt="Simbol pi dan perhitungan" class="w-full h-full object-cover"/></div>
+            <h3 class="mt-3 font-semibold">Menghitung Nilai π</h3>
+            <div class="mt-2 flex flex-wrap gap-2">
+              <span class="px-2 py-1 text-xs rounded-full border text-slate-600 dark:text-slate-300">Math</span>
+              <span class="px-2 py-1 text-xs rounded-full border text-slate-600 dark:text-slate-300">Jupyter</span>
+            </div>
+            <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Eksperimen numerik menghitung π.</p>
+          </div>
+
+          <div tabindex="0" role="button" class="p-4 rounded-xl bg-white dark:bg-slate-900 shadow hover:shadow-lg transition cursor-pointer project-card reveal" data-project='{"title":"tugas_menghitung_nilai_pi","tags":["Jupyter Notebook","Math"],"description":"Varian tugas menghitung nilai pi (notebook).","image":"assets/project-6.jpg","code":"https://github.com/parulian-johannes/tugas_menghitung_nilai_pi"}' onclick="openProject(this)">
+            <div class="w-full h-36 object-cover rounded-md overflow-hidden"><img loading="lazy" src="assets/project-6.jpg" alt="Notebook perhitungan pi" class="w-full h-full object-cover"/></div>
+            <h3 class="mt-3 font-semibold">Tugas: Menghitung π (variant)</h3>
+            <div class="mt-2 flex flex-wrap gap-2">
+              <span class="px-2 py-1 text-xs rounded-full border text-slate-600 dark:text-slate-300">Notebook</span>
+              <span class="px-2 py-1 text-xs rounded-full border text-slate-600 dark:text-slate-300">Math</span>
+            </div>
+            <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Notebook matematika dan eksperimen.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="py-16">
+      <div class="max-w-5xl mx-auto px-6">
+        <h2 class="text-2xl font-bold">Skills</h2>
+        <div class="mt-4 grid sm:grid-cols-2 gap-4 text-slate-700 dark:text-slate-300">
+          <ul id="skills-list-1" class="list-disc ml-5">
+            <li>Web Development: HTML, CSS, JavaScript</li>
+            <li>Styling & Frameworks: Tailwind CSS</li>
+            <li>Database Management: MySQL, phpMyAdmin</li>
+            <li>Python: NumPy, pandas, Jupyter Notebook</li>
+          </ul>
+          <ul id="skills-list-2" class="list-disc ml-5">
+            <li>Microsoft Office, Google Workspace</li>
+            <li>Project & Event Coordination</li>
+            <li>Leadership & Team Collaboration</li>
+            <li>Communication, Time Management, Problem-solving mindset</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-16 bg-slate-50 dark:bg-slate-800">
+      <div class="max-w-3xl mx-auto px-6">
+        <h2 id="contact-heading" class="text-2xl font-bold">Contact</h2>
+        <p id="contact-intro" class="mt-2 text-slate-600 dark:text-slate-300">Tertarik bekerja sama? Kirim email, kunjungi LinkedIn, atau isi form sederhana di bawah.</p>
+
+        <div class="mt-4 flex flex-col sm:flex-row gap-3 items-start">
+          <a id="contact-email-btn" href="mailto:parulianjohannes28@gmail.com" class="px-4 py-2 rounded-md border">parulianjohannes28@gmail.com</a>
+          <a id="contact-linkedin-btn" href="https://www.linkedin.com/in/parulian-johannes-883aa3268" target="_blank" rel="noopener" class="px-4 py-2 rounded-md border">LinkedIn</a>
+        </div>
+
+        <form id="contact-form" class="mt-6 grid gap-3" novalidate>
+          <input id="input-name" name="name" required placeholder="Nama" class="px-4 py-2 rounded-md border bg-white dark:bg-slate-900" />
+          <input id="input-email" name="email" type="email" required placeholder="Email" class="px-4 py-2 rounded-md border bg-white dark:bg-slate-900" />
+          <textarea id="input-message" name="message" required placeholder="Pesan" class="px-4 py-2 rounded-md border bg-white dark:bg-slate-900"></textarea>
+          <div class="flex gap-3 items-center">
+            <button id="submit-btn" type="submit" class="px-4 py-2 rounded-md bg-primary text-white">Kirim</button>
+            <a id="email-direct" href="mailto:email@contoh.com" class="px-4 py-2 rounded-md border">Email langsung</a>
+            <span id="form-status" class="text-sm text-slate-500 dark:text-slate-400 ml-2"></span>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer class="py-8">
+      <div class="max-w-5xl mx-auto px-6 text-center text-sm text-slate-500"><span id="footer-text">© 2025 Nama Anda — Built with ❤️ • <a href="#" class="underline">Privacy</a></span></div>
+    </footer>
+  </main>
+
+  <!-- Project Modal -->
+  <div id="project-modal" class="fixed inset-0 hidden z-50 items-center justify-center bg-black/50" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="bg-white dark:bg-slate-900 max-w-3xl w-full rounded-lg overflow-hidden shadow-lg" role="document">
+      <div class="p-5">
+        <div class="flex items-start justify-between">
+          <div>
+            <h3 id="modal-title" class="text-xl font-semibold">Title</h3>
+            <div id="modal-tags" class="mt-2 flex gap-2 text-sm text-slate-600 dark:text-slate-300"></div>
+          </div>
+          <button id="modal-close" class="text-slate-500" aria-label="Close project dialog">✕</button>
+        </div>
+
+        <img id="modal-image" src="" alt="" class="mt-4 w-full h-48 object-cover rounded" />
+        <p id="modal-desc" class="mt-4 text-slate-700 dark:text-slate-300"></p>
+
+        <div class="mt-4 flex gap-2">
+          <a id="modal-live" class="px-4 py-2 rounded-md bg-primary text-white" href="#">Live</a>
+          <a id="modal-code" class="px-4 py-2 rounded-md border" href="#">Code</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

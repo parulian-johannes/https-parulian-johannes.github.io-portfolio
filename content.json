@@ -1,0 +1,172 @@
+{
+  "id": {
+    "hero": {
+      "name": "Hai, saya Parulian Johannes",
+      "subtitle": "Mahasiswa Teknik Komputer — Web Developer & Data Enthusiast. Berpengalaman membangun antarmuka responsif dan analisis data."
+    },
+    "about": "Mahasiswa Teknik Komputer yang termotivasi dengan pengalaman kepemimpinan organisasi, koordinasi proyek, dan pengembangan web. Aktif ikut serta dalam organisasi mahasiswa dan kegiatan sukarela, menangani fundraising, program ekonomi kreatif, dan bimbingan mahasiswa baru. Berpengalaman membuat antarmuka web dan mendukung program pemberdayaan digital untuk UMKM lokal.",
+    "projects": {
+      "heading": "Proyek",
+      "items": {
+        "TA_DKP_PARULIAN-JOHANNES_21120122140141_PROGRAM_DATA_KEPENDUDUKAN_SEMARANG": {
+          "title": "TA: Data Kependudukan Semarang",
+          "description": "Tugas akhir — analisis program data kependudukan Semarang menggunakan Python.",
+          "image": "assets/project-1.jpg"
+        },
+        "Tugas-metnum": {
+          "title": "Tugas: Metode Numerik",
+          "description": "Kumpulan tugas metode numerik dan eksperimen menggunakan Jupyter Notebook.",
+          "image": "assets/project-2.jpg"
+        },
+        "Tugas_Interpolasi": {
+          "title": "Tugas Interpolasi",
+          "description": "Implementasi interpolasi numerik dan visualisasi dalam Jupyter Notebook.",
+          "image": "assets/project-3.jpg"
+        },
+        "Tugas-Aplikasi-Regresi": {
+          "title": "Aplikasi Regresi",
+          "description": "Tugas aplikasi regresi dan analisis model dalam notebook.",
+          "image": "assets/project-4.jpg"
+        },
+        "Tugas-menghitung-nilai-pi": {
+          "title": "Menghitung Nilai π",
+          "description": "Eksperimen numerik menghitung nilai π menggunakan berbagai metode.",
+          "image": "assets/project-5.jpg"
+        },
+        "tugas_menghitung_nilai_pi": {
+          "title": "Varian: Menghitung π",
+          "description": "Notebook eksperimen menghitung π (varian tugas).",
+          "image": "assets/project-6.jpg"
+        }
+      }
+    }
+    ,
+    "nav": {
+      "about": "Tentang",
+      "projects": "Proyek",
+      "skills": "Keahlian",
+      "contact": "Kontak",
+      "download_cv": "Download CV"
+    },
+    "cta": {
+      "projects": "Lihat Projek",
+      "contact": "Hubungi Saya",
+      "download": "Download CV"
+    },
+    "skills": {
+      "left": [
+        "Web Development: HTML, CSS, JavaScript",
+        "Styling & Frameworks: Tailwind CSS",
+        "Database Management: MySQL, phpMyAdmin",
+        "Python: NumPy, pandas, Jupyter Notebook"
+      ],
+      "right": [
+        "Microsoft Office, Google Workspace",
+        "Project & Event Coordination",
+        "Leadership & Team Collaboration",
+        "Communication, Time Management, Problem-solving mindset"
+      ]
+    },
+    "contact": {
+      "heading": "Kontak",
+      "intro": "Tertarik bekerja sama? Kirim email, kunjungi LinkedIn, atau isi form sederhana di bawah.",
+      "email_label": "parulianjohannes28@gmail.com",
+      "linkedin_label": "LinkedIn",
+      "form": {
+        "name_placeholder": "Nama",
+        "email_placeholder": "Email",
+        "message_placeholder": "Pesan",
+        "submit": "Kirim",
+        "email_direct": "Email langsung"
+      }
+    },
+    "footer": {
+      "text": "© 2025 Parulian Johannes — Dibuat dengan ❤️ • <a href='#' class='underline'>Privacy</a>"
+    }
+  },
+  "en": {
+    "hero": {
+      "name": "Hi, I'm Parulian Johannes",
+      "subtitle": "Computer Engineering student — Web Developer & Data Enthusiast. Experienced building responsive UIs and doing data analysis."
+    },
+    "about": "A motivated Computer Engineering student with experience in organizational leadership, project coordination, and web development. Actively involved in student organizations and volunteer work, handling responsibilities such as fundraising, creative economics programs, and mentoring new students. Experienced in building web interfaces and supporting digital empowerment programs for local SMEs.",
+    "projects": {
+      "heading": "Projects",
+      "items": {
+        "TA_DKP_PARULIAN-JOHANNES_21120122140141_PROGRAM_DATA_KEPENDUDUKAN_SEMARANG": {
+          "title": "Thesis: Semarang Population Data",
+          "description": "Undergraduate thesis — analysis of Semarang population data using Python.",
+          "image": "assets/project-1.jpg"
+        },
+        "Tugas-metnum": {
+          "title": "Numerical Methods Assignments",
+          "description": "Collection of numerical methods tasks and experiments in Jupyter Notebook.",
+          "image": "assets/project-2.jpg"
+        },
+        "Tugas_Interpolasi": {
+          "title": "Interpolation Assignment",
+          "description": "Numerical interpolation implementation and visualization in Jupyter Notebook.",
+          "image": "assets/project-3.jpg"
+        },
+        "Tugas-Aplikasi-Regresi": {
+          "title": "Regression Application",
+          "description": "Regression application tasks and model analysis in notebooks.",
+          "image": "assets/project-4.jpg"
+        },
+        "Tugas-menghitung-nilai-pi": {
+          "title": "Computing π",
+          "description": "Numerical experiments to compute π using different methods.",
+          "image": "assets/project-5.jpg"
+        },
+        "tugas_menghitung_nilai_pi": {
+          "title": "π Variant Assignment",
+          "description": "Notebook variant for π computation experiments.",
+          "image": "assets/project-6.jpg"
+        }
+      }
+    }
+    ,
+    "nav": {
+      "about": "About",
+      "projects": "Projects",
+      "skills": "Skills",
+      "contact": "Contact",
+      "download_cv": "Download CV"
+    },
+    "cta": {
+      "projects": "View Projects",
+      "contact": "Contact Me",
+      "download": "Download CV"
+    },
+    "skills": {
+      "left": [
+        "Web Development: HTML, CSS, JavaScript",
+        "Styling & Frameworks: Tailwind CSS",
+        "Database Management: MySQL, phpMyAdmin",
+        "Python: NumPy, pandas, Jupyter Notebook"
+      ],
+      "right": [
+        "Microsoft Office, Google Workspace",
+        "Project & Event Coordination",
+        "Leadership & Team Collaboration",
+        "Communication, Time Management, Problem-solving mindset"
+      ]
+    },
+    "contact": {
+      "heading": "Contact",
+      "intro": "Interested in collaborating? Send an email, visit my LinkedIn, or fill the simple form below.",
+      "email_label": "parulianjohannes28@gmail.com",
+      "linkedin_label": "LinkedIn",
+      "form": {
+        "name_placeholder": "Name",
+        "email_placeholder": "Email",
+        "message_placeholder": "Message",
+        "submit": "Send",
+        "email_direct": "Email directly"
+      }
+    },
+    "footer": {
+      "text": "© 2025 Parulian Johannes — Built with ❤️ • <a href='#' class='underline'>Privacy</a>"
+    }
+  }
+}

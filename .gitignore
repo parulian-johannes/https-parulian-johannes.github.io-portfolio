@@ -1,0 +1,17 @@
+# PowerShell server scripts (tidak perlu di hosting)
+serve.ps1
+serve_fallback.ps1
+
+# CV file yang sudah ada resume.pdf
+CV ATS PARULIAN JOHANNES.pdf
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
