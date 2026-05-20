@@ -8,34 +8,34 @@
     "projects": {
       "heading": "Proyek",
       "items": {
-        "TA_DKP_PARULIAN-JOHANNES_21120122140141_PROGRAM_DATA_KEPENDUDUKAN_SEMARANG": {
-          "title": "TA: Data Kependudukan Semarang",
-          "description": "Tugas akhir — analisis program data kependudukan Semarang menggunakan Python.",
+        "Mobile-APP-UMKM": {
+          "title": "Mobile APP UMKM",
+          "description": "Aplikasi mobile untuk mendukung UMKM dan alur operasional digital.",
           "image": "assets/project-1.jpg"
         },
-        "Tugas-metnum": {
-          "title": "Tugas: Metode Numerik",
-          "description": "Kumpulan tugas metode numerik dan eksperimen menggunakan Jupyter Notebook.",
+        "Website-Perpustakaan-Sekolah": {
+          "title": "Website Perpustakaan Sekolah",
+          "description": "Website perpustakaan sekolah dengan fitur manajemen katalog dan peminjaman.",
           "image": "assets/project-2.jpg"
+        },
+        "FUELSENSE-MONITOR-APP": {
+          "title": "FuelSense Monitor App",
+          "description": "Aplikasi monitoring untuk pelacakan data dan status sistem FuelSense.",
+          "image": "assets/project-3.jpg"
+        },
+        "MY-BIBLE": {
+          "title": "MY-BIBLE",
+          "description": "Aplikasi web bertema Alkitab dengan antarmuka interaktif berbasis JavaScript.",
+          "image": "assets/project-4.jpg"
         },
         "Tugas_Interpolasi": {
           "title": "Tugas Interpolasi",
           "description": "Implementasi interpolasi numerik dan visualisasi dalam Jupyter Notebook.",
-          "image": "assets/project-3.jpg"
-        },
-        "Tugas-Aplikasi-Regresi": {
-          "title": "Aplikasi Regresi",
-          "description": "Tugas aplikasi regresi dan analisis model dalam notebook.",
-          "image": "assets/project-4.jpg"
-        },
-        "Tugas-menghitung-nilai-pi": {
-          "title": "Menghitung Nilai π",
-          "description": "Eksperimen numerik menghitung nilai π menggunakan berbagai metode.",
           "image": "assets/project-5.jpg"
         },
-        "tugas_menghitung_nilai_pi": {
-          "title": "Varian: Menghitung π",
-          "description": "Notebook eksperimen menghitung π (varian tugas).",
+        "TA_DKP_PARULIAN-JOHANNES_21120122140141_PROGRAM_DATA_KEPENDUDUKAN_SEMARANG": {
+          "title": "TA: Data Kependudukan Semarang",
+          "description": "Tugas akhir — analisis program data kependudukan Semarang menggunakan Python.",
           "image": "assets/project-6.jpg"
         }
       }
@@ -93,34 +93,34 @@
     "projects": {
       "heading": "Projects",
       "items": {
-        "TA_DKP_PARULIAN-JOHANNES_21120122140141_PROGRAM_DATA_KEPENDUDUKAN_SEMARANG": {
-          "title": "Thesis: Semarang Population Data",
-          "description": "Undergraduate thesis — analysis of Semarang population data using Python.",
+        "Mobile-APP-UMKM": {
+          "title": "Mobile APP UMKM",
+          "description": "A mobile app project to support SMEs and digital operational workflows.",
           "image": "assets/project-1.jpg"
         },
-        "Tugas-metnum": {
-          "title": "Numerical Methods Assignments",
-          "description": "Collection of numerical methods tasks and experiments in Jupyter Notebook.",
+        "Website-Perpustakaan-Sekolah": {
+          "title": "School Library Website",
+          "description": "A school library website with catalog and borrowing management features.",
           "image": "assets/project-2.jpg"
+        },
+        "FUELSENSE-MONITOR-APP": {
+          "title": "FuelSense Monitor App",
+          "description": "A monitoring app for tracking data and system status in FuelSense.",
+          "image": "assets/project-3.jpg"
+        },
+        "MY-BIBLE": {
+          "title": "MY-BIBLE",
+          "description": "A JavaScript-based interactive web application with Bible-themed features.",
+          "image": "assets/project-4.jpg"
         },
         "Tugas_Interpolasi": {
           "title": "Interpolation Assignment",
           "description": "Numerical interpolation implementation and visualization in Jupyter Notebook.",
-          "image": "assets/project-3.jpg"
-        },
-        "Tugas-Aplikasi-Regresi": {
-          "title": "Regression Application",
-          "description": "Regression application tasks and model analysis in notebooks.",
-          "image": "assets/project-4.jpg"
-        },
-        "Tugas-menghitung-nilai-pi": {
-          "title": "Computing π",
-          "description": "Numerical experiments to compute π using different methods.",
           "image": "assets/project-5.jpg"
         },
-        "tugas_menghitung_nilai_pi": {
-          "title": "π Variant Assignment",
-          "description": "Notebook variant for π computation experiments.",
+        "TA_DKP_PARULIAN-JOHANNES_21120122140141_PROGRAM_DATA_KEPENDUDUKAN_SEMARANG": {
+          "title": "Thesis: Semarang Population Data",
+          "description": "Undergraduate thesis — analysis of Semarang population data using Python.",
           "image": "assets/project-6.jpg"
         }
       }

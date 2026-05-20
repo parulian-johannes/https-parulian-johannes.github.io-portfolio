@@ -308,7 +308,8 @@
     projectCards.forEach((card, idx)=>{
       try{
         const data = JSON.parse(card.dataset.project);
-        const key = data.title;
+        const key = data.key || data.title;
+        data.key = key;
         if(c.projects && c.projects.items && c.projects.items[key]){
           const item = c.projects.items[key];
           // update dataset
