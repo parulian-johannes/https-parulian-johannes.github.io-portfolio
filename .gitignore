@@ -1,6 +1,8 @@
 # PowerShell server scripts (tidak perlu di hosting)
 serve.ps1
 serve_fallback.ps1
+server.out.log
+server.err.log
 
 # CV file yang sudah ada resume.pdf
 CV ATS PARULIAN JOHANNES.pdf
