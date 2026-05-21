@@ -23,22 +23,28 @@
     }
   </script>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body class="bg-white text-slate-800 antialiased dark:bg-slate-900 dark:text-slate-200">
   <header class="fixed w-full z-40 backdrop-blur bg-white/60 dark:bg-slate-900/60 border-b border-slate-200 dark:border-slate-700">
-      <div class="max-w-5xl mx-auto px-6 py-3 flex items-center justify-between">
-      <a href="#home" class="font-semibold text-lg">Parulian Johannes<span class="text-primary">.</span></a>
+      <div class="max-w-6xl mx-auto px-6 py-3 flex items-center gap-6">
+      <a id="site-brand" href="#home" class="font-semibold text-lg shrink-0">Parulian Johannes<span class="text-primary">.</span></a>
 
-      <nav class="hidden md:flex items-center gap-4 flex-nowrap flex-1">
-        <div class="nav-links flex items-center gap-4 mx-auto">
+      <nav class="hidden md:flex items-center justify-between flex-1 min-w-0">
+        <div class="nav-links flex items-center gap-6">
           <a id="nav-about" href="#about" class="hover:text-primary">About</a>
-          <a id="nav-projects" href="#projects" class="hover:text-primary">Projects</a>
-          <a id="nav-skills" href="#skills" class="hover:text-primary">Skills</a>
-          <a id="nav-contact" href="#contact" class="hover:text-primary">Contact</a>
+          <a id="nav-projects" href="projects.html" class="hover:text-primary">Proyek</a>
+          <a id="nav-organizations" href="organizations.html" class="hover:text-primary">Organizations</a>
+          <a id="nav-experience" href="experience.html" class="hover:text-primary">Work Experience</a>
+          <a id="nav-skills" href="skills.html" class="hover:text-primary">Skills</a>
         </div>
 
-        <div class="header-actions flex items-center gap-3 ml-4">
+        <div class="header-actions flex items-center gap-2 ml-auto">
+          <a id="header-contact-cta" href="mailto:parulianjohannes28@gmail.com" class="header-cta">Hubungi Saya</a>
+
           <a href="mailto:parulianjohannes28@gmail.com" class="action-btn" aria-label="Email: parulianjohannes28@gmail.com" title="Email">
             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4zm2 0v.511l8 5.333 8-5.333V4H4zm16 2.689l-7.206 4.803a1 1 0 0 1-1.088 0L4 6.689V20h16V6.689z"/></svg>
           </a>
@@ -59,14 +65,11 @@
             <svg viewBox="0 0 24 24" class="icon" aria-hidden="true" focusable="false"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 2c1.3 0 2.5.3 3.6.8-.1.4-.3.8-.5 1.2-.7-.2-1.4-.3-2.1-.3-1 0-1.9.2-2.8.5-.5-.8-.8-1.6-.9-2.5A7.9 7.9 0 0 1 12 4zM6 9c.1.9.4 1.7.9 2.5C6.9 12 6 11.5 6 11V9zM12 20c-1.3 0-2.5-.3-3.6-.8.1-.4.3-.8.5-1.2.7.2 1.4.3 2.1.3 1 0 1.9-.2 2.8-.5.5.8.8 1.6.9 2.5A7.9 7.9 0 0 1 12 20z"/></svg>
           </button>
 
-          <button id="theme-toggle" class="action-btn" aria-label="Toggle theme" title="Toggle theme">
-            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-          </button>
+          
         </div>
       </nav>
 
-      <div class="md:hidden flex items-center gap-2">
-        <button id="theme-toggle-mobile" aria-label="Toggle color theme" class="px-2 py-1 rounded-md border">☾</button>
+      <div class="md:hidden flex items-center gap-2 ml-auto">
         <button id="nav-toggle" aria-controls="mobile-nav" aria-expanded="false" class="p-2 rounded-md border" aria-label="Toggle navigation">☰</button>
       </div>
     </div>
@@ -75,9 +78,10 @@
     <div id="mobile-nav" class="md:hidden hidden border-t border-slate-200 dark:border-slate-700 bg-white/80 dark:bg-slate-900/80" aria-hidden="true">
       <div class="px-6 py-4 flex flex-col gap-3">
         <a href="#about" class="hover:text-primary">About</a>
-        <a href="#projects" class="hover:text-primary">Projects</a>
-        <a href="#skills" class="hover:text-primary">Skills</a>
-        <a href="#contact" class="hover:text-primary">Contact</a>
+        <a href="projects.html" class="hover:text-primary">Proyek</a>
+        <a href="organizations.html" class="hover:text-primary">Organizations</a>
+        <a href="experience.html" class="hover:text-primary">Work Experience</a>
+        <a href="skills.html" class="hover:text-primary">Skills</a>
         <a href="mailto:parulianjohannes28@gmail.com" class="hover:text-primary flex items-center gap-2"> 
           <svg class="icon-sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4zm2 0v.511l8 5.333 8-5.333V4H4zm16 2.689l-7.206 4.803a1 1 0 0 1-1.088 0L4 6.689V20h16V6.689z"/></svg>
           parulianjohannes28@gmail.com
@@ -102,7 +106,7 @@
   <main class="pt-20">
     <!-- Hero -->
     <section id="home" class="min-h-[70vh] flex items-center">
-  <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-8 items-center hero-visuals">
+  <div class="site-container grid md:grid-cols-2 gap-8 items-center hero-visuals">
         <!-- decorative blobs -->
         <div class="blob blob--purple" aria-hidden="true"></div>
         <div class="blob blob--cyan" aria-hidden="true"></div>
@@ -111,8 +115,8 @@
           <p id="hero-sub" class="mt-4 text-lg text-slate-600 dark:text-slate-300">Mahasiswa Teknik Komputer — Web Developer & Data Enthusiast. Berpengalaman membangun antarmuka responsif dengan HTML, Tailwind, dan JavaScript serta melakukan analisis data dan eksperimen numerik menggunakan Python dan Jupyter Notebook.</p>
 
           <div class="mt-6 flex flex-wrap gap-3 items-center">
-            <a id="cta-projects-btn" href="#projects" class="px-5 py-2 rounded-md btn-gradient text-white shadow-sm cta-btn" role="button">Lihat Projek</a>
-            <a id="cta-contact-btn" href="#contact" class="px-5 py-2 rounded-md border">Hubungi Saya</a>
+            <a id="cta-projects-btn" href="projects.html" class="px-5 py-2 rounded-md btn-gradient text-white shadow-sm cta-btn" role="button">Lihat Projek</a>
+            <a id="cta-contact-btn" href="mailto:parulianjohannes28@gmail.com" class="px-5 py-2 rounded-md border">Hubungi Saya</a>
             <a id="cta-download-btn" href="resume.pdf" class="px-5 py-2 rounded-md border" target="_blank">Download CV</a>
           </div>
 
@@ -133,6 +137,8 @@
       </div>
     </section>
 
+    <!-- Skills moved to skills.html -->
+
     <!-- AI Wave separator -->
     <div class="ai-wave" aria-hidden="true">
       <svg viewBox="0 0 1440 320" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
@@ -150,150 +156,15 @@
 
     <!-- About -->
     <section id="about" class="py-16">
-      <div class="max-w-5xl mx-auto px-6">
-        <h2 class="text-2xl font-bold">About</h2>
+      <div class="site-container">
+        <h2 id="about-heading" class="text-2xl font-bold">About</h2>
   <div id="about-text" class="mt-4 text-slate-600 dark:text-slate-300">Highly motivated Computer Engineering student with strong experience in organizational leadership, project coordination, and web development. Actively involved in student organizations and volunteer projects, handling responsibilities such as fundraising management, creative economics programs, and mentoring new students. Experienced in developing web interfaces and supporting digital empowerment programs for local SMEs. Strong teamwork, communication, and problem-solving abilities, with a commitment to continuous learning and professional growth.</div>
 
-        <div class="mt-4 grid md:grid-cols-2 gap-6">
-          <div class="space-y-3">
-            <h3 class="font-semibold">Organisasi & Pengalaman Komite</h3>
-            <ul class="list-disc ml-5 text-slate-600 dark:text-slate-300">
-              <li><strong>Head of Fundraising Division</strong>, HIMASKOM — Universitas Diponegoro (Jan 2024 – Apr 2025)</li>
-              <li><strong>Head of Creative Economic Division</strong>, PMK FT — Universitas Diponegoro (Jan 2025 – Dec 2025)</li>
-              <li><strong>Staff Muda</strong>, PMK FT — Universitas Diponegoro (Jan 2024 – Dec 2024)</li>
-              <li><strong>Volunteer</strong>, AIESEC in Semarang (Jun 2023 – Jul 2023)</li>
-              <li><strong>Student Mentor</strong>, ODM UNDIP (Aug 2023)</li>
-              <li><strong>Event Staff, UI/UX The ACE</strong> — Teknik Komputer Undip (Jul 2024 – Sept 2024)</li>
-            </ul>
-          </div>
-
-          <div class="space-y-3">
-            <h3 class="font-semibold">Cara kerja & Kekuatan</h3>
-            <p class="text-slate-600 dark:text-slate-300">Iteratif, komunikatif, dan berfokus pada deliverable yang dapat diuji. Saya menekankan dokumentasi, kolaborasi lintas tim, dan solusi yang reproducible untuk analisis data dan pengembangan front-end.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects" class="py-16 bg-slate-50 dark:bg-slate-800">
-      <div class="max-w-5xl mx-auto px-6">
-  <h2 id="projects-heading" class="text-2xl font-bold">Projects</h2>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">Beberapa contoh project yang saya kerjakan. Klik untuk detail.</p>
-
-    <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- Projects imported from GitHub profile -->
-          <div tabindex="0" role="button" class="p-4 rounded-xl bg-white dark:bg-slate-900 shadow hover:shadow-lg transition cursor-pointer project-card reveal" data-project='{"title":"Mobile-APP-UMKM","tags":["Dart","Flutter"],"description":"Aplikasi mobile untuk mendukung UMKM dan alur operasional digital.","image":"assets/project-1.jpg","code":"https://github.com/parulian-johannes/Mobile-APP-UMKM"}' onclick="openProject(this)">
-            <div class="w-full h-36 object-cover rounded-md overflow-hidden"><img loading="lazy" src="assets/project-1.jpg" alt="Aplikasi mobile UMKM" class="w-full h-full object-cover"/></div>
-            <h3 class="mt-3 font-semibold">Mobile APP UMKM</h3>
-            <div class="mt-2 flex flex-wrap gap-2">
-              <span class="px-2 py-1 text-xs rounded-full border text-slate-600 dark:text-slate-300">Dart</span>
-              <span class="px-2 py-1 text-xs rounded-full border text-slate-600 dark:text-slate-300">Flutter</span>
-            </div>
-            <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Aplikasi mobile untuk kebutuhan UMKM.</p>
-          </div>
-
-          <div tabindex="0" role="button" class="p-4 rounded-xl bg-white dark:bg-slate-900 shadow hover:shadow-lg transition cursor-pointer project-card reveal" data-project='{"title":"Website-Perpustakaan-Sekolah","tags":["Blade","Laravel"],"description":"Website perpustakaan sekolah dengan fitur manajemen katalog dan peminjaman.","image":"assets/project-2.jpg","code":"https://github.com/parulian-johannes/Website-Perpustakaan-Sekolah"}' onclick="openProject(this)">
-            <div class="w-full h-36 object-cover rounded-md overflow-hidden"><img loading="lazy" src="assets/project-2.jpg" alt="Website perpustakaan sekolah" class="w-full h-full object-cover"/></div>
-            <h3 class="mt-3 font-semibold">Website Perpustakaan Sekolah</h3>
-            <div class="mt-2 flex flex-wrap gap-2">
-              <span class="px-2 py-1 text-xs rounded-full border text-slate-600 dark:text-slate-300">Blade</span>
-              <span class="px-2 py-1 text-xs rounded-full border text-slate-600 dark:text-slate-300">Laravel</span>
-            </div>
-            <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Sistem perpustakaan berbasis web.</p>
-          </div>
-
-          <div tabindex="0" role="button" class="p-4 rounded-xl bg-white dark:bg-slate-900 shadow hover:shadow-lg transition cursor-pointer project-card reveal" data-project='{"title":"FUELSENSE-MONITOR-APP","tags":["C#","Monitoring"],"description":"Aplikasi monitoring untuk pelacakan data dan status sistem FuelSense.","image":"assets/project-3.jpg","code":"https://github.com/parulian-johannes/FUELSENSE-MONITOR-APP"}' onclick="openProject(this)">
-            <div class="w-full h-36 object-cover rounded-md overflow-hidden"><img loading="lazy" src="assets/project-3.jpg" alt="Aplikasi monitoring fuelsense" class="w-full h-full object-cover"/></div>
-            <h3 class="mt-3 font-semibold">FuelSense Monitor App</h3>
-            <div class="mt-2 flex flex-wrap gap-2">
-              <span class="px-2 py-1 text-xs rounded-full border text-slate-600 dark:text-slate-300">C#</span>
-              <span class="px-2 py-1 text-xs rounded-full border text-slate-600 dark:text-slate-300">Monitoring</span>
-            </div>
-            <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Aplikasi monitor data FuelSense.</p>
-          </div>
-
-          <div tabindex="0" role="button" class="p-4 rounded-xl bg-white dark:bg-slate-900 shadow hover:shadow-lg transition cursor-pointer project-card reveal" data-project='{"title":"MY-BIBLE","tags":["JavaScript","Web"],"description":"Aplikasi web bertema Alkitab dengan antarmuka interaktif berbasis JavaScript.","image":"assets/project-4.jpg","code":"https://github.com/parulian-johannes/MY-BIBLE"}' onclick="openProject(this)">
-            <div class="w-full h-36 object-cover rounded-md overflow-hidden"><img loading="lazy" src="assets/project-4.jpg" alt="Aplikasi web my bible" class="w-full h-full object-cover"/></div>
-            <h3 class="mt-3 font-semibold">MY-BIBLE</h3>
-            <div class="mt-2 flex flex-wrap gap-2">
-              <span class="px-2 py-1 text-xs rounded-full border text-slate-600 dark:text-slate-300">JavaScript</span>
-              <span class="px-2 py-1 text-xs rounded-full border text-slate-600 dark:text-slate-300">Web</span>
-            </div>
-            <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Aplikasi web interaktif berbasis JavaScript.</p>
-          </div>
-
-          <div tabindex="0" role="button" class="p-4 rounded-xl bg-white dark:bg-slate-900 shadow hover:shadow-lg transition cursor-pointer project-card reveal" data-project='{"title":"Tugas_Interpolasi","tags":["Jupyter Notebook","Interpolation"],"description":"Implementasi interpolasi numerik dalam Jupyter Notebook.","image":"assets/project-5.jpg","code":"https://github.com/parulian-johannes/Tugas_Interpolasi"}' onclick="openProject(this)">
-            <div class="w-full h-36 object-cover rounded-md overflow-hidden"><img loading="lazy" src="assets/project-5.jpg" alt="Grafik interpolasi" class="w-full h-full object-cover"/></div>
-            <h3 class="mt-3 font-semibold">Tugas Interpolasi</h3>
-            <div class="mt-2 flex flex-wrap gap-2">
-              <span class="px-2 py-1 text-xs rounded-full border text-slate-600 dark:text-slate-300">Jupyter</span>
-              <span class="px-2 py-1 text-xs rounded-full border text-slate-600 dark:text-slate-300">Interpolation</span>
-            </div>
-            <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Notebook tugas interpolasi.</p>
-          </div>
-
-          <div tabindex="0" role="button" class="p-4 rounded-xl bg-white dark:bg-slate-900 shadow hover:shadow-lg transition cursor-pointer project-card reveal" data-project='{"title":"TA_DKP_PARULIAN-JOHANNES_21120122140141_PROGRAM_DATA_KEPENDUDUKAN_SEMARANG","tags":["Python","Data"],"description":"Tugas akhir: analisis program data kependudukan Semarang (Python).","image":"assets/project-6.jpg","code":"https://github.com/parulian-johannes/TA_DKP_PARULIAN-JOHANNES_21120122140141_PROGRAM_DATA_KEPENDUDUKAN_SEMARANG"}' onclick="openProject(this)">
-            <div class="w-full h-36 object-cover rounded-md overflow-hidden"><img loading="lazy" src="assets/project-6.jpg" alt="Analisis data kependudukan" class="w-full h-full object-cover"/></div>
-            <h3 class="mt-3 font-semibold">TA_DKP — Data Kependudukan</h3>
-            <div class="mt-2 flex flex-wrap gap-2">
-              <span class="px-2 py-1 text-xs rounded-full border text-slate-600 dark:text-slate-300">Python</span>
-              <span class="px-2 py-1 text-xs rounded-full border text-slate-600 dark:text-slate-300">Data</span>
-            </div>
-            <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Tugas akhir / analisis data (Python).</p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills -->
-    <section id="skills" class="py-16">
-      <div class="max-w-5xl mx-auto px-6">
-        <h2 class="text-2xl font-bold">Skills</h2>
-        <div class="mt-4 grid sm:grid-cols-2 gap-4 text-slate-700 dark:text-slate-300">
-          <ul id="skills-list-1" class="list-disc ml-5">
-            <li>Web Development: HTML, CSS, JavaScript</li>
-            <li>Styling & Frameworks: Tailwind CSS</li>
-            <li>Database Management: MySQL, phpMyAdmin</li>
-            <li>Python: NumPy, pandas, Jupyter Notebook</li>
-          </ul>
-          <ul id="skills-list-2" class="list-disc ml-5">
-            <li>Microsoft Office, Google Workspace</li>
-            <li>Project & Event Coordination</li>
-            <li>Leadership & Team Collaboration</li>
-            <li>Communication, Time Management, Problem-solving mindset</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="py-16 bg-slate-50 dark:bg-slate-800">
-      <div class="max-w-3xl mx-auto px-6">
-        <h2 id="contact-heading" class="text-2xl font-bold">Contact</h2>
-        <p id="contact-intro" class="mt-2 text-slate-600 dark:text-slate-300">Tertarik bekerja sama? Kirim email, kunjungi LinkedIn, atau isi form sederhana di bawah.</p>
-
-        <div class="mt-4 flex flex-col sm:flex-row gap-3 items-start">
-          <a id="contact-email-btn" href="mailto:parulianjohannes28@gmail.com" class="px-4 py-2 rounded-md border">parulianjohannes28@gmail.com</a>
-          <a id="contact-linkedin-btn" href="https://www.linkedin.com/in/parulian-johannes-883aa3268" target="_blank" rel="noopener" class="px-4 py-2 rounded-md border">LinkedIn</a>
-        </div>
-
-        <form id="contact-form" class="mt-6 grid gap-3" novalidate>
-          <input id="input-name" name="name" required placeholder="Nama" class="px-4 py-2 rounded-md border bg-white dark:bg-slate-900" />
-          <input id="input-email" name="email" type="email" required placeholder="Email" class="px-4 py-2 rounded-md border bg-white dark:bg-slate-900" />
-          <textarea id="input-message" name="message" required placeholder="Pesan" class="px-4 py-2 rounded-md border bg-white dark:bg-slate-900"></textarea>
-          <div class="flex gap-3 items-center">
-            <button id="submit-btn" type="submit" class="px-4 py-2 rounded-md bg-primary text-white">Kirim</button>
-            <a id="email-direct" href="mailto:email@contoh.com" class="px-4 py-2 rounded-md border">Email langsung</a>
-            <span id="form-status" class="text-sm text-slate-500 dark:text-slate-400 ml-2"></span>
-          </div>
-        </form>
       </div>
     </section>
 
     <footer class="py-8">
-      <div class="max-w-5xl mx-auto px-6 text-center text-sm text-slate-500"><span id="footer-text">© 2025 Nama Anda — Built with ❤️ • <a href="#" class="underline">Privacy</a></span></div>
+      <div class="site-container text-center text-sm text-slate-500"><span id="footer-text">© 2025 Nama Anda — Built with ❤️ • <a href="#" class="underline">Privacy</a></span></div>
     </footer>
   </main>
 

@@ -1,0 +1,785 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { background: #0b1220; color: #e2e8f0; }
+    .card { background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(148, 163, 184, 0.25); }
+    .inp { background: #0f172a; border: 1px solid #334155; color: #e2e8f0; }
+    .inp:focus { outline: none; border-color: #22d3ee; box-shadow: 0 0 0 2px rgba(34, 211, 238, 0.2); }
+    .btn { border: 1px solid rgba(148,163,184,.35); border-radius: .75rem; padding: .6rem .9rem; }
+    .btn:hover { background: rgba(255,255,255,.04); }
+  </style>
+</head>
+<body class="min-h-screen">
+  <main class="max-w-6xl mx-auto px-4 py-8">
+    <header class="mb-6">
+      <h1 class="text-2xl font-bold">Admin Portfolio</h1>
+      <p class="text-slate-300 mt-1">Edit header, navbar, about, project, media, dan kontak tanpa buka coding.</p>
+      <p class="text-slate-400 text-sm mt-1">Semua tersimpan di browser ini dan bisa diekspor ke JSON.</p>
+    </header>
+
+    <section class="card rounded-xl p-4 md:p-6 space-y-6">
+      <div>
+        <h2 class="text-lg font-semibold mb-3">Header & Navigasi</h2>
+        <div class="grid md:grid-cols-2 gap-3">
+          <input id="siteBrand" class="inp rounded-md px-3 py-2" placeholder="Nama brand / nama di header" />
+          <input id="headerContactCta" class="inp rounded-md px-3 py-2" placeholder="Teks tombol header (mis. Hubungi Saya)" />
+          <input id="navAbout" class="inp rounded-md px-3 py-2" placeholder="Label navbar About" />
+          <input id="navProjects" class="inp rounded-md px-3 py-2" placeholder="Label navbar Projects" />
+          <input id="navMedia" class="inp rounded-md px-3 py-2" placeholder="Label navbar Media" />
+          <input id="navSkills" class="inp rounded-md px-3 py-2" placeholder="Label navbar Skills" />
+          <input id="navContact" class="inp rounded-md px-3 py-2 md:col-span-2" placeholder="Label navbar Contact" />
+           <input id="navOrganizations" class="inp rounded-md px-3 py-2" placeholder="Label navbar Organizations" />
+           <input id="navExperience" class="inp rounded-md px-3 py-2" placeholder="Label navbar Work Experience" />
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-lg font-semibold mb-3">Hero & About</h2>
+        <div class="grid md:grid-cols-2 gap-3">
+          <input id="heroName" class="inp rounded-md px-3 py-2" placeholder="Judul hero" />
+          <input id="ctaProjects" class="inp rounded-md px-3 py-2" placeholder="Tombol hero projects" />
+          <input id="ctaContact" class="inp rounded-md px-3 py-2" placeholder="Tombol hero contact" />
+          <input id="ctaDownload" class="inp rounded-md px-3 py-2" placeholder="Tombol hero download" />
+          <div class="space-y-2">
+            <label class="block px-4 py-2 rounded-md border border-slate-500 cursor-pointer text-center">Upload Foto Profil<input id="profileImageInput" type="file" accept="image/*" class="hidden" /></label>
+            <img id="profileImagePreview" alt="Preview foto profil" class="hidden w-full h-44 object-cover rounded-md border border-slate-700" />
+          </div>
+          <textarea id="heroSubtitle" class="inp rounded-md px-3 py-2 w-full" rows="4" placeholder="Subtitle hero"></textarea>
+        </div>
+        <div class="grid md:grid-cols-2 gap-3 mt-3">
+          <input id="aboutHeading" class="inp rounded-md px-3 py-2" placeholder="Judul About" />
+          <input id="skillsHeading" class="inp rounded-md px-3 py-2" placeholder="Judul Skills" />
+          <input id="projectsHeading" class="inp rounded-md px-3 py-2" placeholder="Judul Projects" />
+          <input id="mediaHeading" class="inp rounded-md px-3 py-2" placeholder="Judul Media" />
+          <input id="contactHeading" class="inp rounded-md px-3 py-2" placeholder="Judul Contact" />
+           <input id="organizationsHeading" class="inp rounded-md px-3 py-2" placeholder="Judul Organizations" />
+           <input id="experienceHeading" class="inp rounded-md px-3 py-2" placeholder="Judul Work Experience" />
+          <input id="mediaIntro" class="inp rounded-md px-3 py-2" placeholder="Intro media" />
+          <textarea id="aboutText" class="inp rounded-md px-3 py-2 md:col-span-2" rows="5" placeholder="About text"></textarea>
+           <input id="organizationsIntro" class="inp rounded-md px-3 py-2 md:col-span-2" placeholder="Intro organizations" />
+           <input id="experienceIntro" class="inp rounded-md px-3 py-2 md:col-span-2" placeholder="Intro work experience" />
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-lg font-semibold mb-3">Skills</h2>
+        <div class="grid md:grid-cols-2 gap-3">
+          <textarea id="skillsLeft" class="inp rounded-md px-3 py-2 w-full" rows="6" placeholder="Skill kiri (satu baris satu skill)"></textarea>
+          <textarea id="skillsRight" class="inp rounded-md px-3 py-2 w-full" rows="6" placeholder="Skill kanan (satu baris satu skill)"></textarea>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-lg font-semibold mb-3">Contact & Footer</h2>
+        <div class="grid md:grid-cols-2 gap-3">
+          <input id="contactEmail" class="inp rounded-md px-3 py-2" placeholder="Email" />
+          <input id="contactPhone" class="inp rounded-md px-3 py-2" placeholder="Nomor telepon/WhatsApp" />
+          <input id="contactLinkedin" class="inp rounded-md px-3 py-2 md:col-span-2" placeholder="URL LinkedIn" />
+          <input id="contactIntro" class="inp rounded-md px-3 py-2 md:col-span-2" placeholder="Intro contact" />
+          <input id="contactEmailLabel" class="inp rounded-md px-3 py-2" placeholder="Label email button" />
+          <input id="contactLinkedinLabel" class="inp rounded-md px-3 py-2" placeholder="Label LinkedIn button" />
+          <input id="contactPhoneLabel" class="inp rounded-md px-3 py-2" placeholder="Label phone button" />
+          <input id="emailDirectLabel" class="inp rounded-md px-3 py-2" placeholder="Label email direct" />
+          <textarea id="footerText" class="inp rounded-md px-3 py-2 md:col-span-2" rows="2" placeholder="Footer text HTML"></textarea>
+        </div>
+      </div>
+
+      <div>
+        <div class="flex items-center justify-between gap-3 mb-3">
+          <div>
+            <h2 class="text-lg font-semibold">Projects</h2>
+            <p class="text-slate-400 text-sm">Tambah project sebanyak yang Anda mau. Gambar proyek diupload langsung.</p>
+          </div>
+          <button id="addProjectBtn" type="button" class="btn">+ Tambah Project</button>
+        </div>
+        <div id="projectsWrap" class="space-y-4"></div>
+      </div>
+
+       <div>
+         <div class="flex items-center justify-between gap-3 mb-3">
+           <div>
+             <h2 class="text-lg font-semibold">Organizations</h2>
+             <p class="text-slate-400 text-sm">Kelola pengalaman organisasi dan komite di halaman khusus.</p>
+           </div>
+           <button id="addOrgBtn" type="button" class="btn">+ Tambah Organisasi</button>
+         </div>
+         <div id="orgsWrap" class="space-y-4"></div>
+       </div>
+
+       <div>
+         <div class="flex items-center justify-between gap-3 mb-3">
+           <div>
+             <h2 class="text-lg font-semibold">Work Experience</h2>
+             <p class="text-slate-400 text-sm">Kelola pengalaman kerja, freelance, internship, atau project profesional.</p>
+           </div>
+           <button id="addExperienceBtn" type="button" class="btn">+ Tambah Experience</button>
+         </div>
+         <div id="experienceWrap" class="space-y-4"></div>
+       </div>
+
+      <div>
+        <div class="flex items-center justify-between gap-3 mb-3">
+          <div>
+            <h2 class="text-lg font-semibold">Media Upload</h2>
+            <p class="text-slate-400 text-sm">Upload foto-foto untuk section Media. Bisa banyak sekaligus.</p>
+          </div>
+          <label class="btn cursor-pointer">Upload Media<input id="mediaUploadInput" type="file" accept="image/*" multiple class="hidden" /></label>
+        </div>
+        <div id="mediaList" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3"></div>
+        <div class="mt-3 flex gap-2">
+          <button id="clearMediaBtn" type="button" class="btn">Hapus Semua Media</button>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap gap-2 pt-2">
+        <button id="saveBtn" class="px-4 py-2 rounded-md bg-cyan-500 text-slate-900 font-semibold">Simpan</button>
+        <button id="resetBtn" class="px-4 py-2 rounded-md border border-slate-500">Reset ke default</button>
+        <button id="exportBtn" class="px-4 py-2 rounded-md border border-slate-500">Export JSON</button>
+        <label class="px-4 py-2 rounded-md border border-slate-500 cursor-pointer">
+          Import JSON
+          <input id="importInput" type="file" accept="application/json" class="hidden" />
+        </label>
+        <a href="index.html" class="px-4 py-2 rounded-md border border-slate-500">Lihat Website</a>
+      </div>
+      <p id="status" class="text-sm text-slate-300"></p>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      const STORAGE_KEY = 'portfolioAdminDataV1';
+      const statusEl = document.getElementById('status');
+      const mediaUploadInput = document.getElementById('mediaUploadInput');
+      const mediaList = document.getElementById('mediaList');
+      const clearMediaBtn = document.getElementById('clearMediaBtn');
+      const addProjectBtn = document.getElementById('addProjectBtn');
+      const addOrgBtn = document.getElementById('addOrgBtn');
+      const addExperienceBtn = document.getElementById('addExperienceBtn');
+      const orgsWrap = document.getElementById('orgsWrap');
+      const experienceWrap = document.getElementById('experienceWrap');
+      let mediaItems = [];
+      let projectItems = [];
+      let orgItems = [];
+      let experienceItems = [];
+
+      const fields = {
+        siteBrand: document.getElementById('siteBrand'),
+        headerContactCta: document.getElementById('headerContactCta'),
+        navAbout: document.getElementById('navAbout'),
+        navProjects: document.getElementById('navProjects'),
+        navOrganizations: document.getElementById('navOrganizations'),
+        navExperience: document.getElementById('navExperience'),
+        navMedia: document.getElementById('navMedia'),
+        navSkills: document.getElementById('navSkills'),
+        navContact: document.getElementById('navContact'),
+        heroName: document.getElementById('heroName'),
+        heroSubtitle: document.getElementById('heroSubtitle'),
+        ctaProjects: document.getElementById('ctaProjects'),
+        ctaContact: document.getElementById('ctaContact'),
+        ctaDownload: document.getElementById('ctaDownload'),
+        profileImageInput: document.getElementById('profileImageInput'),
+        profileImagePreview: document.getElementById('profileImagePreview'),
+        aboutHeading: document.getElementById('aboutHeading'),
+        skillsHeading: document.getElementById('skillsHeading'),
+        projectsHeading: document.getElementById('projectsHeading'),
+        organizationsHeading: document.getElementById('organizationsHeading'),
+        experienceHeading: document.getElementById('experienceHeading'),
+        mediaHeading: document.getElementById('mediaHeading'),
+        organizationsIntro: document.getElementById('organizationsIntro'),
+        experienceIntro: document.getElementById('experienceIntro'),
+        mediaIntro: document.getElementById('mediaIntro'),
+        contactHeading: document.getElementById('contactHeading'),
+        aboutText: document.getElementById('aboutText'),
+        skillsLeft: document.getElementById('skillsLeft'),
+        skillsRight: document.getElementById('skillsRight'),
+        contactEmail: document.getElementById('contactEmail'),
+        contactPhone: document.getElementById('contactPhone'),
+        contactLinkedin: document.getElementById('contactLinkedin'),
+        contactIntro: document.getElementById('contactIntro'),
+        contactEmailLabel: document.getElementById('contactEmailLabel'),
+        contactLinkedinLabel: document.getElementById('contactLinkedinLabel'),
+        contactPhoneLabel: document.getElementById('contactPhoneLabel'),
+        emailDirectLabel: document.getElementById('emailDirectLabel'),
+        footerText: document.getElementById('footerText')
+      };
+
+      const projectsWrap = document.getElementById('projectsWrap');
+
+      function parseLines(text) {
+        return String(text || '').split('\n').map(s => s.trim()).filter(Boolean);
+      }
+
+      function splitTags(text) {
+        return String(text || '').split(',').map(s => s.trim()).filter(Boolean);
+      }
+
+      function fileToDataUrl(file) {
+        return new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onload = () => resolve(String(reader.result || ''));
+          reader.onerror = reject;
+          reader.readAsDataURL(file);
+        });
+      }
+
+      function downscaleImage(file) {
+        return new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onload = () => {
+            const img = new Image();
+            img.onload = () => {
+              const maxW = 1600;
+              const scale = Math.min(1, maxW / img.width);
+              const w = Math.round(img.width * scale);
+              const h = Math.round(img.height * scale);
+              const canvas = document.createElement('canvas');
+              canvas.width = w;
+              canvas.height = h;
+              const ctx = canvas.getContext('2d');
+              ctx.drawImage(img, 0, 0, w, h);
+              resolve(canvas.toDataURL('image/jpeg', 0.84));
+            };
+            img.onerror = reject;
+            img.src = reader.result;
+          };
+          reader.onerror = reject;
+          reader.readAsDataURL(file);
+        });
+      }
+
+      function loadFromStorage() {
+        try { const raw = localStorage.getItem(STORAGE_KEY); return raw ? JSON.parse(raw) : null; } catch (_) { return null; }
+      }
+
+      function saveToStorage(data) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+      }
+
+      function makeProjectItem(project, idx) {
+        const card = document.createElement('div');
+        card.className = 'card rounded-xl p-3 space-y-3';
+        card.innerHTML = `
+          <div class="flex items-center justify-between gap-2">
+            <h3 class="font-semibold">Project ${idx + 1}</h3>
+            <button type="button" class="remove-project btn text-red-300 border-red-400">Hapus</button>
+          </div>
+          <div class="grid md:grid-cols-2 gap-3">
+            <div class="space-y-2 md:col-span-2">
+              <div class="project-preview-wrap"></div>
+              <label class="block px-4 py-2 rounded-md border border-slate-500 cursor-pointer text-center">Upload gambar project<input class="hidden project-file" type="file" accept="image/*"></label>
+            </div>
+            <input class="inp rounded-md px-3 py-2 project-title" placeholder="Title" value="${(project.title || '').replace(/"/g, '&quot;')}">
+            <input class="inp rounded-md px-3 py-2 project-image" placeholder="(otomatis data gambar upload)" value="${(project.image || '').replace(/"/g, '&quot;')}" readonly>
+            <input class="inp rounded-md px-3 py-2 md:col-span-2 project-code" placeholder="Repo URL" value="${(project.code || '').replace(/"/g, '&quot;')}">
+            <input class="inp rounded-md px-3 py-2 md:col-span-2 project-live" placeholder="Live URL (opsional)" value="${(project.live || '').replace(/"/g, '&quot;')}">
+            <input class="inp rounded-md px-3 py-2 md:col-span-2 project-tags" placeholder="Tags (pisah koma)" value="${((project.tags || []).join(', ')).replace(/"/g, '&quot;')}">
+          </div>
+          <textarea class="inp rounded-md px-3 py-2 w-full project-desc" rows="3" placeholder="Description">${(project.description || '')}</textarea>
+        `;
+
+        const previewWrap = card.querySelector('.project-preview-wrap');
+        const fileInput = card.querySelector('.project-file');
+        const imageField = card.querySelector('.project-image');
+        const titleField = card.querySelector('.project-title');
+        const descField = card.querySelector('.project-desc');
+        const codeField = card.querySelector('.project-code');
+        const liveField = card.querySelector('.project-live');
+        const tagsField = card.querySelector('.project-tags');
+
+        function paintPreview(src) {
+          previewWrap.innerHTML = src
+            ? `<img src="${src}" alt="Preview project" class="w-full h-40 object-cover rounded-md border border-slate-700">`
+            : '<div class="w-full h-40 rounded-md border border-dashed border-slate-600 flex items-center justify-center text-slate-400 text-sm">Belum ada gambar</div>';
+        }
+
+        paintPreview(project.image || '');
+
+        fileInput.addEventListener('change', async (e) => {
+          const file = e.target.files && e.target.files[0];
+          if (!file || !file.type.startsWith('image/')) return;
+          const src = await downscaleImage(file);
+          projectItems[idx].image = src;
+          imageField.value = src;
+          paintPreview(src);
+          e.target.value = '';
+        });
+
+        titleField.addEventListener('input', e => projectItems[idx].title = e.target.value);
+        descField.addEventListener('input', e => projectItems[idx].description = e.target.value);
+        codeField.addEventListener('input', e => projectItems[idx].code = e.target.value);
+        liveField.addEventListener('input', e => projectItems[idx].live = e.target.value);
+        tagsField.addEventListener('input', e => projectItems[idx].tags = splitTags(e.target.value));
+        card.querySelector('.remove-project').addEventListener('click', () => {
+          projectItems.splice(idx, 1);
+          renderProjects();
+        });
+
+        return card;
+      }
+
+      function renderProjects() {
+        projectsWrap.innerHTML = '';
+        if (!projectItems.length) {
+          projectsWrap.innerHTML = '<p class="text-slate-400 text-sm">Belum ada project. Klik "Tambah Project".</p>';
+          return;
+        }
+        projectItems.forEach((project, idx) => projectsWrap.appendChild(makeProjectItem(project, idx)));
+      }
+
+      function makeTimelineItem(item, idx, kind) {
+        const card = document.createElement('div');
+        card.className = 'card rounded-xl p-3 space-y-3';
+        const titleLabel = kind === 'org' ? 'Role' : 'Role / Title';
+        const orgLabel = kind === 'org' ? 'Organization' : 'Company';
+        // If experience, include image upload + preview similar to projects
+        const imageBlock = kind === 'exp' ? `
+            <div class="space-y-2 md:col-span-2">
+              <div class="item-preview-wrap"></div>
+              <label class="block px-4 py-2 rounded-md border border-slate-500 cursor-pointer text-center">Upload foto (bisa pilih lebih dari 1)<input class="hidden item-files" type="file" accept="image/*" multiple></label>
+            </div>
+            <input class="inp rounded-md px-3 py-2 item-images md:col-span-2" placeholder="(otomatis data gambar upload)" value="${(Array.isArray(item.images) ? item.images.join(',') : (item.image || '')).replace(/"/g, '&quot;')}" readonly>
+          ` : '';
+
+        card.innerHTML = `
+          <div class="flex items-center justify-between gap-2">
+            <h3 class="font-semibold">${kind === 'org' ? 'Organization' : 'Experience'} ${idx + 1}</h3>
+            <button type="button" class="remove-item btn text-red-300 border-red-400">Hapus</button>
+          </div>
+          <div class="grid md:grid-cols-2 gap-3">
+            ${imageBlock}
+            <input class="inp rounded-md px-3 py-2 item-role md:col-span-2" placeholder="${titleLabel}" value="${(item.role || item.title || '').replace(/"/g, '&quot;')}">
+            <input class="inp rounded-md px-3 py-2 item-org md:col-span-2" placeholder="${orgLabel}" value="${(item.organization || item.company || '').replace(/"/g, '&quot;')}">
+            <input class="inp rounded-md px-3 py-2 item-period md:col-span-2" placeholder="Period" value="${(item.period || '').replace(/"/g, '&quot;')}">
+          </div>
+          <textarea class="inp rounded-md px-3 py-2 w-full item-desc" rows="3" placeholder="Description">${(item.description || '')}</textarea>
+        `;
+        const roleField = card.querySelector('.item-role');
+        const orgField = card.querySelector('.item-org');
+        const periodField = card.querySelector('.item-period');
+        const descField = card.querySelector('.item-desc');
+        roleField.addEventListener('input', e => item.role = e.target.value);
+        orgField.addEventListener('input', e => item.organization = e.target.value);
+        periodField.addEventListener('input', e => item.period = e.target.value);
+        descField.addEventListener('input', e => item.description = e.target.value);
+
+        // If experience kind, wire image upload/preview
+        if (kind === 'exp') {
+          const previewWrap = card.querySelector('.item-preview-wrap');
+          const fileInput = card.querySelector('.item-files');
+          const imageField = card.querySelector('.item-images');
+
+          function paintPreview(list) {
+            const images = Array.isArray(list) ? list : (list ? [list] : []);
+            if (!images.length) {
+              previewWrap.innerHTML = '<div class="w-full h-40 rounded-md border border-dashed border-slate-600 flex items-center justify-center text-slate-400 text-sm">Belum ada foto</div>';
+              return;
+            }
+            previewWrap.innerHTML = images.map((src, i) => `
+              <div class="inline-block relative mr-2 mb-2">
+                <img src="${src}" data-idx="${i}" class="w-28 h-20 object-cover rounded-md border border-slate-700" />
+                <button type="button" data-idx="${i}" class="remove-exp-image absolute top-0 right-0 text-xs bg-black/50 text-white rounded-full px-1">×</button>
+              </div>
+            `).join('');
+          }
+
+          const currentImages = Array.isArray(item.images) ? item.images : (item.image ? [item.image] : []);
+          paintPreview(currentImages);
+
+          // remove handler
+          previewWrap.addEventListener('click', (ev) => {
+            const btn = ev.target.closest('.remove-exp-image');
+            if (!btn) return;
+            const removeIdx = Number(btn.getAttribute('data-idx'));
+            experienceItems[idx] = experienceItems[idx] || item;
+            const imgs = Array.isArray(experienceItems[idx].images) ? experienceItems[idx].images : (experienceItems[idx].image ? [experienceItems[idx].image] : []);
+            imgs.splice(removeIdx, 1);
+            experienceItems[idx].images = imgs;
+            if (imageField) imageField.value = imgs.join(',');
+            paintPreview(imgs);
+          });
+
+          fileInput.addEventListener('change', async (e) => {
+            const files = Array.from(e.target.files || []).filter(f => f.type && f.type.startsWith('image/'));
+            if (!files.length) return;
+            statusEl.textContent = 'Memproses upload foto pengalaman...';
+            experienceItems[idx] = experienceItems[idx] || item;
+            experienceItems[idx].images = Array.isArray(experienceItems[idx].images) ? experienceItems[idx].images : (experienceItems[idx].image ? [experienceItems[idx].image] : []);
+            for (const file of files) {
+              const src = await downscaleImage(file);
+              experienceItems[idx].images.push(src);
+            }
+            const imgs = experienceItems[idx].images;
+            if (imageField) imageField.value = imgs.join(',');
+            paintPreview(imgs);
+            statusEl.textContent = `${files.length} foto ditambahkan.`;
+            e.target.value = '';
+          });
+        }
+
+        card.querySelector('.remove-item').addEventListener('click', () => {
+          if (kind === 'org') {
+            orgItems.splice(idx, 1);
+            renderOrgItems();
+          } else {
+            experienceItems.splice(idx, 1);
+            renderExperienceItems();
+          }
+        });
+        return card;
+      }
+
+      function renderOrgItems() {
+        orgsWrap.innerHTML = '';
+        if (!orgItems.length) {
+          orgsWrap.innerHTML = '<p class="text-slate-400 text-sm">Belum ada organisasi. Klik "Tambah Organisasi".</p>';
+          return;
+        }
+        orgItems.forEach((item, idx) => orgsWrap.appendChild(makeTimelineItem(item, idx, 'org')));
+      }
+
+      function renderExperienceItems() {
+        experienceWrap.innerHTML = '';
+        if (!experienceItems.length) {
+          experienceWrap.innerHTML = '<p class="text-slate-400 text-sm">Belum ada pengalaman kerja. Klik "Tambah Experience".</p>';
+          return;
+        }
+        experienceItems.forEach((item, idx) => experienceWrap.appendChild(makeTimelineItem(item, idx, 'exp')));
+      }
+
+      function makeMediaCard(item, idx) {
+        const card = document.createElement('div');
+        card.className = 'card rounded-lg p-2 space-y-2';
+        card.innerHTML = `
+          <img src="${item.src}" alt="Media ${idx + 1}" class="w-full h-40 object-cover rounded-md">
+          <input class="inp rounded-md px-2 py-1 w-full media-caption" placeholder="Caption foto" value="${(item.caption || '').replace(/"/g, '&quot;')}">
+          <button type="button" class="remove-media w-full px-2 py-1 rounded-md border border-red-400 text-red-300">Hapus foto</button>
+        `;
+        card.querySelector('.media-caption').addEventListener('input', (e) => { mediaItems[idx].caption = e.target.value; saveToStorage(collectData()); });
+        card.querySelector('.remove-media').addEventListener('click', () => { mediaItems.splice(idx, 1); renderMediaList(); saveToStorage(collectData()); statusEl.textContent = 'Foto di media dihapus.'; });
+        return card;
+      }
+
+      function renderMediaList() {
+        mediaList.innerHTML = '';
+        if (!mediaItems.length) {
+          mediaList.innerHTML = '<p class="text-slate-400 text-sm">Belum ada media diupload.</p>';
+          return;
+        }
+        mediaItems.forEach((item, idx) => mediaList.appendChild(makeMediaCard(item, idx)));
+      }
+
+      async function handleMediaUpload(files) {
+        const list = Array.from(files || []).filter(f => f.type.startsWith('image/'));
+        if (!list.length) return;
+        statusEl.textContent = 'Memproses upload media...';
+        for (const file of list) mediaItems.push({ src: await downscaleImage(file), caption: '' });
+        renderMediaList();
+        statusEl.textContent = `${list.length} foto berhasil ditambahkan.`;
+      }
+
+      function collectData() {
+        return {
+          siteBrand: fields.siteBrand.value.trim(),
+          headerContactCta: fields.headerContactCta.value.trim(),
+          navAbout: fields.navAbout.value.trim(),
+          navProjects: fields.navProjects.value.trim(),
+          navOrganizations: fields.navOrganizations.value.trim(),
+          navExperience: fields.navExperience.value.trim(),
+          navMedia: fields.navMedia.value.trim(),
+          navSkills: fields.navSkills.value.trim(),
+          navContact: fields.navContact.value.trim(),
+          heroName: fields.heroName.value.trim(),
+          heroSubtitle: fields.heroSubtitle.value.trim(),
+          ctaProjects: fields.ctaProjects.value.trim(),
+          ctaContact: fields.ctaContact.value.trim(),
+          ctaDownload: fields.ctaDownload.value.trim(),
+          profileImage: fields.profileImagePreview && fields.profileImagePreview.src ? fields.profileImagePreview.src : '',
+          aboutHeading: fields.aboutHeading.value.trim(),
+          skillsHeading: fields.skillsHeading.value.trim(),
+          projectsHeading: fields.projectsHeading.value.trim(),
+          organizationsHeading: fields.organizationsHeading.value.trim(),
+          experienceHeading: fields.experienceHeading.value.trim(),
+          mediaHeading: fields.mediaHeading.value.trim(),
+          organizationsIntro: fields.organizationsIntro.value.trim(),
+          experienceIntro: fields.experienceIntro.value.trim(),
+          mediaIntro: fields.mediaIntro.value.trim(),
+          contactHeading: fields.contactHeading.value.trim(),
+          aboutText: fields.aboutText.value.trim(),
+          skillsLeft: parseLines(fields.skillsLeft.value),
+          skillsRight: parseLines(fields.skillsRight.value),
+          contactEmail: fields.contactEmail.value.trim(),
+          contactPhone: fields.contactPhone.value.trim(),
+          contactLinkedin: fields.contactLinkedin.value.trim(),
+          contactIntro: fields.contactIntro.value.trim(),
+          contactEmailLabel: fields.contactEmailLabel.value.trim(),
+          contactLinkedinLabel: fields.contactLinkedinLabel.value.trim(),
+          contactPhoneLabel: fields.contactPhoneLabel.value.trim(),
+          emailDirectLabel: fields.emailDirectLabel.value.trim(),
+          footerText: fields.footerText.value.trim(),
+          projects: projectItems,
+          organizations: orgItems,
+          workExperience: experienceItems,
+          mediaItems: mediaItems
+        };
+      }
+
+      function fillForm(data) {
+        fields.siteBrand.value = data.siteBrand || '';
+        fields.headerContactCta.value = data.headerContactCta === 'Contact' ? 'Hubungi Saya' : (data.headerContactCta || '');
+        fields.navAbout.value = data.navAbout || '';
+        fields.navProjects.value = data.navProjects || '';
+        fields.navOrganizations.value = data.navOrganizations || '';
+        fields.navExperience.value = data.navExperience || '';
+        fields.navMedia.value = data.navMedia || '';
+        fields.navSkills.value = data.navSkills || '';
+        fields.navContact.value = '';
+        fields.heroName.value = data.heroName || '';
+        fields.heroSubtitle.value = data.heroSubtitle || '';
+        fields.ctaProjects.value = data.ctaProjects || '';
+        fields.ctaContact.value = data.ctaContact === 'Contact' ? 'Hubungi Saya' : (data.ctaContact || '');
+        fields.ctaDownload.value = data.ctaDownload || '';
+        fields.aboutHeading.value = data.aboutHeading || '';
+        fields.skillsHeading.value = data.skillsHeading || '';
+        fields.projectsHeading.value = data.projectsHeading || '';
+        fields.organizationsHeading.value = data.organizationsHeading || '';
+        fields.experienceHeading.value = data.experienceHeading || '';
+        fields.mediaHeading.value = data.mediaHeading || '';
+        fields.organizationsIntro.value = data.organizationsIntro || '';
+        fields.experienceIntro.value = data.experienceIntro || '';
+        fields.mediaIntro.value = data.mediaIntro || '';
+        fields.contactHeading.value = data.contactHeading || '';
+        fields.aboutText.value = data.aboutText || '';
+        fields.skillsLeft.value = (data.skillsLeft || []).join('\n');
+        fields.skillsRight.value = (data.skillsRight || []).join('\n');
+        fields.contactEmail.value = data.contactEmail || '';
+        fields.contactPhone.value = data.contactPhone || '';
+        fields.contactLinkedin.value = data.contactLinkedin || '';
+        fields.contactIntro.value = data.contactIntro || '';
+        fields.contactEmailLabel.value = data.contactEmailLabel || '';
+        fields.contactLinkedinLabel.value = data.contactLinkedinLabel || '';
+        fields.contactPhoneLabel.value = data.contactPhoneLabel || '';
+        fields.emailDirectLabel.value = data.emailDirectLabel || '';
+        fields.footerText.value = data.footerText || '';
+
+        if (fields.profileImagePreview) {
+          if (data.profileImage) {
+            fields.profileImagePreview.src = data.profileImage;
+            fields.profileImagePreview.classList.remove('hidden');
+          } else {
+            fields.profileImagePreview.src = '';
+            fields.profileImagePreview.classList.add('hidden');
+          }
+        }
+
+        projectItems = Array.isArray(data.projects) ? data.projects : [];
+        orgItems = Array.isArray(data.organizations) ? data.organizations : [];
+        experienceItems = Array.isArray(data.workExperience) ? data.workExperience : [];
+        // Normalize experience items to use `images` array (migrate legacy `image`)
+        experienceItems = experienceItems.map(it => {
+          if (!it) return it;
+          if (Array.isArray(it.images)) return it;
+          if (it.image) {
+            it.images = [it.image];
+            delete it.image;
+            return it;
+          }
+          it.images = [];
+          return it;
+        });
+        mediaItems = Array.isArray(data.mediaItems) ? data.mediaItems : [];
+        renderProjects();
+        renderOrgItems();
+        renderExperienceItems();
+        renderMediaList();
+      }
+
+      async function loadDefaultsFromSite() {
+        try {
+          const [htmlRes, contentRes] = await Promise.all([fetch('index.html'), fetch('content.json')]);
+          const htmlText = await htmlRes.text();
+          const doc = new DOMParser().parseFromString(htmlText, 'text/html');
+          const content = contentRes.ok ? await contentRes.json() : null;
+
+          const c = content && content.id ? content.id : {};
+          const projectItems = c.projects && c.projects.items ? Object.entries(c.projects.items).map(([key, value]) => ({
+            key,
+            title: value && value.title ? value.title : key,
+            description: value && value.description ? value.description : '',
+            image: value && value.image ? value.image : '',
+            code: value && value.code ? value.code : '',
+            live: value && value.live ? value.live : '',
+            tags: Array.isArray(value && value.tags) ? value.tags : []
+          })) : [];
+          const base = {
+            siteBrand: doc.getElementById('site-brand') ? doc.getElementById('site-brand').textContent.replace('.', '').trim() : '',
+            headerContactCta: doc.getElementById('header-contact-cta') ? doc.getElementById('header-contact-cta').textContent.trim() : '',
+            navAbout: doc.getElementById('nav-about') ? doc.getElementById('nav-about').textContent.trim() : '',
+            navProjects: doc.getElementById('nav-projects') ? doc.getElementById('nav-projects').textContent.trim() : '',
+            navOrganizations: c.nav && c.nav.organizations ? c.nav.organizations : 'Organizations',
+            navExperience: c.nav && c.nav.experience ? c.nav.experience : 'Work Experience',
+            navMedia: doc.getElementById('nav-media') ? doc.getElementById('nav-media').textContent.trim() : '',
+            navSkills: doc.getElementById('nav-skills') ? doc.getElementById('nav-skills').textContent.trim() : '',
+            navContact: doc.getElementById('nav-contact') ? doc.getElementById('nav-contact').textContent.trim() : '',
+            heroName: doc.getElementById('hero-name') ? doc.getElementById('hero-name').textContent.trim() : '',
+            heroSubtitle: doc.getElementById('hero-sub') ? doc.getElementById('hero-sub').textContent.trim() : '',
+            ctaProjects: doc.getElementById('cta-projects-btn') ? doc.getElementById('cta-projects-btn').textContent.trim() : '',
+            ctaContact: doc.getElementById('cta-contact-btn') ? doc.getElementById('cta-contact-btn').textContent.trim() : '',
+            ctaDownload: doc.getElementById('cta-download-btn') ? doc.getElementById('cta-download-btn').textContent.trim() : '',
+            profileImage: (doc.querySelector('img[alt="Parulian Johannes"]') || {}).getAttribute ? doc.querySelector('img[alt="Parulian Johannes"]').getAttribute('src') : '',
+            aboutHeading: doc.getElementById('about-heading') ? doc.getElementById('about-heading').textContent.trim() : '',
+            skillsHeading: doc.getElementById('skills-heading') ? doc.getElementById('skills-heading').textContent.trim() : '',
+            projectsHeading: doc.getElementById('projects-heading') ? doc.getElementById('projects-heading').textContent.trim() : '',
+            organizationsHeading: c.organizations && c.organizations.heading ? c.organizations.heading : 'Organizations',
+            experienceHeading: c.workExperience && c.workExperience.heading ? c.workExperience.heading : 'Work Experience',
+            mediaHeading: doc.getElementById('media-heading') ? doc.getElementById('media-heading').textContent.trim() : '',
+            organizationsIntro: c.organizations && c.organizations.intro ? c.organizations.intro : '',
+            experienceIntro: c.workExperience && c.workExperience.intro ? c.workExperience.intro : '',
+            mediaIntro: doc.getElementById('media-intro') ? doc.getElementById('media-intro').textContent.trim() : '',
+            contactHeading: doc.getElementById('contact-heading') ? doc.getElementById('contact-heading').textContent.trim() : '',
+            aboutText: doc.getElementById('about-text') ? doc.getElementById('about-text').textContent.trim() : '',
+            skillsLeft: doc.getElementById('skills-list-1') ? Array.from(doc.getElementById('skills-list-1').querySelectorAll('li')).map(li => li.textContent.trim()) : [],
+            skillsRight: doc.getElementById('skills-list-2') ? Array.from(doc.getElementById('skills-list-2').querySelectorAll('li')).map(li => li.textContent.trim()) : [],
+            contactEmail: c.contact && c.contact.email_label ? c.contact.email_label : 'parulianjohannes28@gmail.com',
+            contactPhone: c.contact && c.contact.phone_label ? c.contact.phone_label : '',
+            contactLinkedin: 'https://www.linkedin.com/in/parulian-johannes-883aa3268',
+            contactIntro: c.contact && c.contact.intro ? c.contact.intro : '',
+            contactEmailLabel: c.contact && c.contact.email_label ? c.contact.email_label : 'Email',
+            contactLinkedinLabel: c.contact && c.contact.linkedin_label ? c.contact.linkedin_label : 'LinkedIn',
+            contactPhoneLabel: c.contact && c.contact.phone_label ? c.contact.phone_label : '',
+            emailDirectLabel: c.contact && c.contact.form && c.contact.form.email_direct ? c.contact.form.email_direct : 'Email langsung',
+            footerText: c.footer && c.footer.text ? c.footer.text : '',
+            projects: projectItems,
+            organizations: Array.isArray(c.organizations && c.organizations.items) ? c.organizations.items : [],
+            workExperience: Array.isArray(c.workExperience && c.workExperience.items) ? c.workExperience.items : [],
+            mediaItems: []
+          };
+          return base;
+        } catch (_) {
+          return {
+            siteBrand: '', headerContactCta: '', navAbout: '', navProjects: '', navOrganizations: '', navExperience: '', navMedia: '', navSkills: '', navContact: '',
+            heroName: '', heroSubtitle: '', ctaProjects: '', ctaContact: '', ctaDownload: '', profileImage: '',
+            aboutHeading: '', skillsHeading: '', projectsHeading: '', organizationsHeading: '', experienceHeading: '', mediaHeading: '',
+            organizationsIntro: '', experienceIntro: '', mediaIntro: '', contactHeading: '',
+            aboutText: '', skillsLeft: [], skillsRight: [], contactEmail: '', contactPhone: '', contactLinkedin: '', contactIntro: '',
+            contactEmailLabel: '', contactLinkedinLabel: '', contactPhoneLabel: '', emailDirectLabel: '', footerText: '',
+            projects: [], organizations: [], workExperience: [], mediaItems: []
+          };
+        }
+      }
+
+      mediaUploadInput.addEventListener('change', async (e) => {
+        const list = Array.from(e.target.files || []).filter(f => f.type.startsWith('image/'));
+        if (!list.length) return;
+        statusEl.textContent = 'Memproses upload media...';
+        for (const file of list) mediaItems.push({ src: await downscaleImage(file), caption: '' });
+        renderMediaList();
+        statusEl.textContent = `${list.length} foto berhasil ditambahkan.`;
+        saveToStorage(collectData());
+        e.target.value = '';
+      });
+
+      fields.profileImageInput.addEventListener('change', async (e) => {
+        const file = e.target.files && e.target.files[0];
+        if (!file || !file.type.startsWith('image/')) return;
+        const src = await downscaleImage(file);
+        fields.profileImagePreview.src = src;
+        fields.profileImagePreview.classList.remove('hidden');
+        statusEl.textContent = 'Foto profil berhasil diunggah.';
+        e.target.value = '';
+      });
+
+      clearMediaBtn.addEventListener('click', () => {
+        mediaItems = [];
+        renderMediaList();
+        statusEl.textContent = 'Semua media dihapus dari draft admin.';
+        saveToStorage(collectData());
+      });
+
+      addProjectBtn.addEventListener('click', () => {
+        projectItems.push({ title: '', description: '', image: '', code: '', live: '', tags: [] });
+        renderProjects();
+        statusEl.textContent = 'Project baru ditambahkan.';
+      });
+
+      if(addOrgBtn){
+        addOrgBtn.addEventListener('click', () => {
+          orgItems.push({ role: '', organization: '', period: '', description: '' });
+          renderOrgItems();
+          statusEl.textContent = 'Organisasi baru ditambahkan.';
+        });
+      }
+
+      if(addExperienceBtn){
+        addExperienceBtn.addEventListener('click', () => {
+          experienceItems.push({ role: '', organization: '', period: '', description: '' });
+          renderExperienceItems();
+          statusEl.textContent = 'Experience baru ditambahkan.';
+        });
+      }
+
+      document.getElementById('saveBtn').addEventListener('click', () => {
+        saveToStorage(collectData());
+        statusEl.textContent = 'Berhasil disimpan. Refresh website utama untuk melihat hasil.';
+      });
+
+      document.getElementById('resetBtn').addEventListener('click', async () => {
+        localStorage.removeItem(STORAGE_KEY);
+        const defaults = await loadDefaultsFromSite();
+        fillForm(defaults);
+        statusEl.textContent = 'Kembali ke default file website.';
+      });
+
+      document.getElementById('exportBtn').addEventListener('click', () => {
+        const blob = new Blob([JSON.stringify(collectData(), null, 2)], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'portfolio-admin-data.json';
+        a.click();
+        URL.revokeObjectURL(url);
+      });
+
+      document.getElementById('importInput').addEventListener('change', async (e) => {
+        const file = e.target.files && e.target.files[0];
+        if (!file) return;
+        try {
+          const parsed = JSON.parse(await file.text());
+          saveToStorage(parsed);
+          fillForm(parsed);
+          statusEl.textContent = 'Import berhasil.';
+        } catch (_) {
+          statusEl.textContent = 'Import gagal. Pastikan JSON valid.';
+        }
+      });
+
+      (async function init() {
+        const saved = loadFromStorage();
+        const defaults = await loadDefaultsFromSite();
+        if (saved) {
+          const merged = {
+            ...defaults,
+            ...saved,
+            projects: Array.isArray(saved.projects) && saved.projects.length ? saved.projects : defaults.projects,
+            organizations: Array.isArray(saved.organizations) && saved.organizations.length ? saved.organizations : defaults.organizations,
+            workExperience: Array.isArray(saved.workExperience) && saved.workExperience.length ? saved.workExperience : defaults.workExperience,
+            mediaItems: Array.isArray(saved.mediaItems) && saved.mediaItems.length ? saved.mediaItems : defaults.mediaItems
+          };
+          fillForm(merged);
+          statusEl.textContent = 'Memuat data admin tersimpan.';
+        } else {
+          fillForm(defaults);
+          statusEl.textContent = 'Memuat data default dari website.';
+        }
+      })();
+    })();
+  </script>
+</body>
+</html>

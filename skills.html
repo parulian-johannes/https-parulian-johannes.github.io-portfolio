@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Skills — Portfolio</title>
+  <meta name="theme-color" content="#0f172a" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class' };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-white text-slate-800 antialiased dark:bg-slate-900 dark:text-slate-200">
+  <!-- Header (copied from index) -->
+  <header class="fixed w-full z-40 backdrop-blur bg-white/60 dark:bg-slate-900/60 border-b border-slate-200 dark:border-slate-700">
+    <div class="max-w-6xl mx-auto px-6 py-3 flex items-center gap-6">
+      <a id="site-brand" href="index.html" class="font-semibold text-lg shrink-0">Parulian Johannes<span class="text-primary">.</span></a>
+      <nav class="hidden md:flex items-center justify-between flex-1 min-w-0">
+        <div class="nav-links flex items-center gap-6">
+          <a id="nav-about" href="index.html#about" class="hover:text-primary">About</a>
+          <a id="nav-projects" href="projects.html" class="hover:text-primary">Proyek</a>
+          <a id="nav-organizations" href="organizations.html" class="hover:text-primary">Organizations</a>
+          <a id="nav-experience" href="experience.html" class="hover:text-primary">Work Experience</a>
+          <a id="nav-skills" href="skills.html" class="hover:text-primary">Skills</a>
+        </div>
+        <div class="header-actions flex items-center gap-2 ml-auto">
+          <a id="header-contact-cta" href="mailto:parulianjohannes28@gmail.com" class="header-cta">Hubungi Saya</a>
+        </div>
+      </nav>
+      <div class="md:hidden flex items-center gap-2 ml-auto">
+        <button id="nav-toggle" aria-controls="mobile-nav" aria-expanded="false" class="p-2 rounded-md border" aria-label="Toggle navigation">☰</button>
+      </div>
+    </div>
+    <div id="mobile-nav" class="md:hidden hidden border-t border-slate-200 dark:border-slate-700 bg-white/80 dark:bg-slate-900/80" aria-hidden="true">
+      <div class="px-6 py-4 flex flex-col gap-3">
+        <a href="index.html#about" class="hover:text-primary">About</a>
+        <a href="projects.html" class="hover:text-primary">Proyek</a>
+        <a href="organizations.html" class="hover:text-primary">Organizations</a>
+        <a href="experience.html" class="hover:text-primary">Work Experience</a>
+        <a href="skills.html" class="hover:text-primary">Skills</a>
+        <a href="mailto:parulianjohannes28@gmail.com" class="hover:text-primary">parulianjohannes28@gmail.com</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-20">
+    <section id="skills" class="py-16">
+      <div class="site-container">
+        <h1 class="text-3xl font-bold">Skills</h1>
+        <div class="mt-4 grid sm:grid-cols-2 gap-4 text-slate-700 dark:text-slate-300">
+          <ul id="skills-list-1" class="list-disc ml-5">
+            <li>Web Development: HTML, CSS, JavaScript</li>
+            <li>Styling & Frameworks: Tailwind CSS</li>
+            <li>Database Management: MySQL, phpMyAdmin</li>
+            <li>Python: NumPy, pandas, Jupyter Notebook</li>
+          </ul>
+          <ul id="skills-list-2" class="list-disc ml-5">
+            <li>Microsoft Office, Google Workspace</li>
+            <li>Project & Event Coordination</li>
+            <li>Leadership & Team Collaboration</li>
+            <li>Communication, Time Management, Problem-solving mindset</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer class="py-8">
+      <div class="site-container text-center text-sm text-slate-500"><span id="footer-text">© 2025 Nama Anda — Built with ❤️ • <a href="#" class="underline">Privacy</a></span></div>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
