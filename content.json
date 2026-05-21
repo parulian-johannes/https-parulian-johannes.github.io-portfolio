@@ -91,13 +91,6 @@
       "intro": "Bagian ini saya siapkan untuk pengalaman kerja, freelance, internship, atau project profesional yang ingin Anda tambahkan nanti.",
       "items": [
         {
-          "role": "Software Engineer Intern",
-          "organization": "Contoh Perusahaan",
-          "period": "Jun 2024 – Aug 2024",
-          "description": "Bekerja pada tim frontend untuk membangun fitur interaktif dan meningkatkan performa aplikasi web.",
-          "images": ["assets/project-1.jpg", "assets/project-2.jpg"]
-        },
-        {
           "role": "Web Developer",
           "organization": "Diskominfo Kota Pekalongan",
           "period": "Juli 2024 – Agustus 2024",
