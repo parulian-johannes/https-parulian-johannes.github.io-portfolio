@@ -951,7 +951,7 @@
     bindExperienceGridInteractions();
   }).catch(()=>{
     // fallback to admin overrides if content.json is unavailable
-    applyAdminOverrides();
+    if(canApplyAdminOverrides()) applyAdminOverrides();
     bindProjectGridInteractions();
     bindExperienceGridInteractions();
   });
@@ -959,7 +959,7 @@
   // Listen for admin changes in other tabs (live-reload admin edits)
   window.addEventListener('storage', (e) => {
     if(e.key === ADMIN_STORAGE_KEY){
-      try{ applyAdminOverrides(); }catch(_){}
+      try{ if(canApplyAdminOverrides()) applyAdminOverrides(); }catch(_){}
     }
   });
 
