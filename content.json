@@ -96,6 +96,20 @@
           "period": "Jun 2024 – Aug 2024",
           "description": "Bekerja pada tim frontend untuk membangun fitur interaktif dan meningkatkan performa aplikasi web.",
           "images": ["assets/project-1.jpg", "assets/project-2.jpg"]
+        },
+        {
+          "role": "Web Developer",
+          "organization": "Diskominfo Kota Pekalongan",
+          "period": "Juli 2024 – Agustus 2024",
+          "description": "Bekerja pada tim frontend untuk mengembangkan fitur layanan publik digital, mendukung implementasi SPBE, dan melakukan pengujian integrasi sehingga meningkatkan keandalan aplikasi.",
+          "images": ["assets/experience-1.jpg"]
+        },
+        {
+          "role": "Data Annotator",
+          "organization": "PT Transportasi Jakarta",
+          "period": "Maret 2026 – April 2026",
+          "description": "Melakukan anotasi dan pelabelan data terkait transportasi untuk pelatihan model ML, memastikan konsistensi anotasi sesuai pedoman, dan membantu validasi hasil bersama tim data.",
+          "images": ["assets/experience-2.jpg"]
         }
       ]
     }
@@ -256,7 +270,22 @@
     "workExperience": {
       "heading": "Work Experience",
       "intro": "This section is ready for freelance, internship, and professional roles you want to add later.",
-      "items": []
+      "items": [
+        {
+          "role": "Web Developer",
+          "organization": "Diskominfo Kota Pekalongan",
+          "period": "Jul 2024 – Aug 2024",
+          "description": "Worked on frontend features for public service applications, supported SPBE implementation, and contributed to integration testing to improve reliability.",
+          "images": ["assets/experience-1.jpg"]
+        },
+        {
+          "role": "Data Annotator",
+          "organization": "PT Transportasi Jakarta",
+          "period": "Mar 2026 – Apr 2026",
+          "description": "Performed data annotation and labeling for transportation datasets used in ML training, ensured annotation accuracy and consistency, and collaborated with the data team on validation.",
+          "images": ["assets/experience-2.jpg"]
+        }
+      ]
     }
     ,
     "media": {
