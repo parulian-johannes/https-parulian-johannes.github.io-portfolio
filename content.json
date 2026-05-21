@@ -7,6 +7,8 @@
     "about": "Mahasiswa Teknik Komputer yang termotivasi dengan pengalaman kepemimpinan organisasi, koordinasi proyek, dan pengembangan web. Aktif ikut serta dalam organisasi mahasiswa dan kegiatan sukarela, menangani fundraising, program ekonomi kreatif, dan bimbingan mahasiswa baru. Berpengalaman membuat antarmuka web dan mendukung program pemberdayaan digital untuk UMKM lokal.",
     "projects": {
       "heading": "Proyek",
+      "intro": "Beberapa contoh project yang saya kerjakan. Klik untuk detail.",
+      "tag_default": "Proyek",
       "items": {
         "Mobile-APP-UMKM": {
           "title": "Mobile APP UMKM",
@@ -118,6 +120,16 @@
       "contact": "Kontak",
       "download_cv": "Download CV"
     },
+    "modal": {
+      "live": "Lihat",
+      "code": "Kode"
+    },
+    "empty_messages": {
+      "projects": "Belum ada project. Tambahkan dari halaman admin.",
+      "organizations": "Belum ada organisasi. Tambahkan dari halaman admin.",
+      "experience": "Belum ada pengalaman kerja. Tambahkan dari halaman admin.",
+      "media": "Belum ada media. Tambahkan dari halaman admin."
+    },
     "cta": {
       "projects": "Lihat Projek",
       "contact": "Hubungi Saya",
@@ -162,6 +174,8 @@
     "about": "A motivated Computer Engineering student with experience in organizational leadership, project coordination, and web development. Actively involved in student organizations and volunteer work, handling responsibilities such as fundraising, creative economics programs, and mentoring new students. Experienced in building web interfaces and supporting digital empowerment programs for local SMEs.",
     "projects": {
       "heading": "Projects",
+      "intro": "Some example projects I've worked on. Click for details.",
+      "tag_default": "Project",
       "items": {
         "Mobile-APP-UMKM": {
           "title": "Mobile APP UMKM",
@@ -264,6 +278,16 @@
       "skills": "Skills",
       "contact": "Contact",
       "download_cv": "Download CV"
+    },
+    "modal": {
+      "live": "View",
+      "code": "Code"
+    },
+    "empty_messages": {
+      "projects": "No projects yet. Add from the admin page.",
+      "organizations": "No organizations yet. Add from the admin page.",
+      "experience": "No work experience yet. Add from the admin page.",
+      "media": "No media yet. Add from the admin page."
     },
     "cta": {
       "projects": "View Projects",

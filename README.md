@@ -40,3 +40,30 @@ Jika mau, saya bisa:
 - Menambahkan generator project list dari data (JSON/MD)
 - Menambahkan form backend atau integrasi Netlify Forms
 - Menambahkan CI/CD dan deploy script
+
+Deploy ke Vercel (via GitHub)
+--------------------------------
+Langkah singkat untuk mendeploy situs ini melalui GitHub + Vercel:
+
+1) Buat repository kosong di GitHub (via web atau `gh repo create`).
+2) Tambahkan remote dan push dari folder ini:
+
+```powershell
+# ganti <your-remote-url> dengan URL repo GitHub Anda
+git remote add origin <your-remote-url>
+git branch -M main
+git push -u origin main
+```
+
+3) Hubungkan repository ke Vercel:
+- Buka https://vercel.com/new lalu pilih repository yang baru Anda push
+- Pilih "Framework Preset" → "Other" atau "Static"
+- Build Command: kosong
+- Output Directory: `/` (root)
+- Klik Deploy
+
+4) Setelah deploy selesai, Vercel akan memberikan URL produksi.
+
+Alternatif: deploy langsung dari mesin ini via Vercel CLI (`npx vercel --prod`) — saya bisa bantu, namun proses instalasi CLI dan login bersifat interaktif.
+
+Catatan keamanan: jangan membagikan token pribadi lewat chat; gunakan GitHub UI atau undang saya sebagai collaborator bila ingin saya yang menghubungkan repo.

@@ -17,3 +17,13 @@ Thumbs.db
 *.swp
 *.swo
 *~
+
+# Node/npm
+node_modules/
+package-lock.json
+
+# Vercel
+.vercel/
+
+# npm cache logs
+npm-debug.log*

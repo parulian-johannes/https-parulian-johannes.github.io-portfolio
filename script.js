@@ -51,7 +51,7 @@
       <div class="project-content mt-3">
         <h3 class="font-semibold project-title">${displayTitle}</h3>
         <div class="mt-2 flex flex-wrap gap-2">
-          ${(tags.length ? tags : ['Project']).map(tag => `<span class="px-2 py-1 text-xs rounded-full border text-slate-600 dark:text-slate-300">${tag}</span>`).join('')}
+          ${(tags.length ? tags : [window.i18nDefaults && window.i18nDefaults.projectTag ? window.i18nDefaults.projectTag : 'Proyek']).map(tag => `<span class="px-2 py-1 text-xs rounded-full border text-slate-600 dark:text-slate-300">${tag}</span>`).join('')}
         </div>
         <p class="mt-2 text-sm text-slate-500 dark:text-slate-400 project-desc">${description}</p>
       </div>
@@ -737,6 +737,9 @@
   function applyContent(lang){
     if(!siteContent || !siteContent[lang]) return;
     const c = siteContent[lang];
+    // setup simple i18n defaults (used by other helpers)
+    window.i18nDefaults = window.i18nDefaults || {};
+    window.i18nDefaults.projectTag = (c.projects && c.projects.tag_default) ? c.projects.tag_default : (c.nav && c.nav.projects ? c.nav.projects : 'Project');
     // Hero
     const heroName = document.getElementById('hero-name');
     const heroSub = document.getElementById('hero-sub');
@@ -745,7 +748,13 @@
 
     // About
     const about = document.getElementById('about-text');
+    const aboutHeadingEl = document.getElementById('about-heading');
     if(about && c.about) about.textContent = c.about;
+    // allow heading translation from either c.aboutHeading or c.nav.about
+    if(aboutHeadingEl){
+      if(c.aboutHeading) aboutHeadingEl.textContent = c.aboutHeading;
+      else if(c.nav && c.nav.about) aboutHeadingEl.textContent = c.nav.about;
+    }
 
     // Projects heading
     const projectsHeading = document.getElementById('projects-heading');
@@ -756,6 +765,10 @@
     const mediaIntro = document.getElementById('media-intro');
     if(mediaHeading && c.media && c.media.heading) mediaHeading.textContent = c.media.heading;
     if(mediaIntro && c.media && c.media.intro) mediaIntro.textContent = c.media.intro;
+
+    // Projects intro (some pages had a hardcoded paragraph)
+    const projectsIntro = document.getElementById('projects-intro');
+    if(projectsIntro && c.projects && c.projects.intro) projectsIntro.textContent = c.projects.intro;
 
     // Render projects from content.json when available
     if(c.projects && c.projects.items){
@@ -786,6 +799,34 @@
       }
     }catch(e){/* ignore */}
 
+    // Update mobile nav and repeated header links (they don't always have IDs)
+    try{
+      const mobileNav = document.getElementById('mobile-nav');
+      if(mobileNav && c.nav){
+        const map = {
+          '#about': c.nav.about,
+          'index.html#about': c.nav.about,
+          'projects.html': c.nav.projects,
+          'organizations.html': c.nav.organizations,
+          'experience.html': c.nav.experience,
+          'skills.html': c.nav.skills,
+          'index.html': c.nav.about
+        };
+        mobileNav.querySelectorAll('a').forEach(a=>{
+          const href = a.getAttribute('href') || '';
+          if(map[href]) a.textContent = map[href];
+          // mailto link in mobile nav: show email label if available
+          if(href.startsWith('mailto:') && c.contact && c.contact.email_label) a.textContent = c.contact.email_label;
+          // LinkedIn / GitHub links: use provided labels if available
+          if(href.includes('linkedin') && c.contact && c.contact.linkedin_label) a.textContent = c.contact.linkedin_label;
+        });
+      }
+      // also update any header small labels like "Portfolio" if content provides a shortTitle
+      if(c.shortTitle){
+        document.querySelectorAll('[data-i18n="shortTitle"]').forEach(el => el.textContent = c.shortTitle);
+      }
+    }catch(e){/* ignore */}
+
     // --- Skills
     try{
       if(c.skills){
@@ -797,6 +838,9 @@
         if(s2 && Array.isArray(c.skills.right)){
           s2.innerHTML = c.skills.right.map(it=>`<li>${it}</li>`).join('');
         }
+        // skills page heading may be present
+        const skillsHeadingEl = document.getElementById('skills-heading');
+        if(skillsHeadingEl && c.nav && c.nav.skills) skillsHeadingEl.textContent = c.nav.skills;
       }
     }catch(e){/* ignore */}
 
@@ -842,8 +886,42 @@
       }
     }catch(e){/* ignore */}
 
+    // Modal buttons (Live / Code)
+    try{
+      if(c.modal){
+        const liveBtn = document.getElementById('modal-live');
+        const codeBtn = document.getElementById('modal-code');
+        if(liveBtn && c.modal.live) liveBtn.textContent = c.modal.live;
+        if(codeBtn && c.modal.code) codeBtn.textContent = c.modal.code;
+      }
+    }catch(e){/* ignore */}
+
     // Apply admin overrides last so manual admin edits always win.
     applyAdminOverrides();
+
+    // Re-apply content fallbacks for elements that may be missing in admin data
+    try{
+      const admin = getAdminData();
+      // About heading: only override from content if admin did not provide custom heading
+      const aboutHeadingEl2 = document.getElementById('about-heading');
+      if(aboutHeadingEl2 && !(admin && admin.aboutHeading)){
+        if(c.aboutHeading) aboutHeadingEl2.textContent = c.aboutHeading;
+        else if(c.nav && c.nav.about) aboutHeadingEl2.textContent = c.nav.about;
+      }
+      // Skills heading
+      const skillsHeadingEl2 = document.getElementById('skills-heading');
+      if(skillsHeadingEl2 && !(admin && admin.skillsHeading) && c.nav && c.nav.skills) skillsHeadingEl2.textContent = c.nav.skills;
+    }catch(e){/* ignore */}
+
+    // Empty state messages
+    try{
+      if(c.empty_messages){
+        const pEmpty = document.getElementById('projects-empty'); if(pEmpty && c.empty_messages.projects) pEmpty.textContent = c.empty_messages.projects;
+        const oEmpty = document.getElementById('org-empty'); if(oEmpty && c.empty_messages.organizations) oEmpty.textContent = c.empty_messages.organizations;
+        const eEmpty = document.getElementById('exp-empty'); if(eEmpty && c.empty_messages.experience) eEmpty.textContent = c.empty_messages.experience;
+        const mEmpty = document.getElementById('media-empty'); if(mEmpty && c.empty_messages.media) mEmpty.textContent = c.empty_messages.media;
+      }
+    }catch(e){/* ignore */}
   }
 
   function updateLangUI(lang){
