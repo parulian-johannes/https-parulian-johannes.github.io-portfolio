@@ -597,6 +597,13 @@
     }
   }
 
+  function canApplyAdminOverrides(){
+    try{
+      const host = window.location.hostname || '';
+      return host === 'localhost' || host === '127.0.0.1' || window.location.protocol === 'file:';
+    }catch(e){ return false; }
+  }
+
   function applyAdminOverrides(){
     const admin = getAdminData();
     if(!admin) return;
@@ -896,8 +903,9 @@
       }
     }catch(e){/* ignore */}
 
-    // Apply admin overrides last so manual admin edits always win.
-    applyAdminOverrides();
+    // Apply admin overrides last so manual admin edits always win —
+    // but only on local origins (do not apply admin overrides on deployed GitHub Pages).
+    if(canApplyAdminOverrides()) applyAdminOverrides();
 
     // Re-apply content fallbacks for elements that may be missing in admin data
     try{
